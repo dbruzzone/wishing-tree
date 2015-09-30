@@ -2,15 +2,15 @@ import argparse
 
 from words import Finder
 
-parser = argparse.ArgumentParser(description='Find words that only contain the specified characters.')
+parser = argparse.ArgumentParser(description='Find words that only contain one or more of the specified character(s).')
 
 # Positional arguments
 parser.add_argument('characters', metavar='CHARACTERS', nargs=1,
-                    help='The characters that the resulting words can contain')
+                    help='The character(s) that the matching words can contain')
 
 # Optional arguments
 parser.add_argument('--file', dest='file', default='./SOWPODS.txt',
-                    help='The file in which the program looks for matching words (Default: ./SOWPODS.txt)')
+                    help="The file in which the program looks for matching words (The program assumes that the file contains one word per line). If a filename isn't specified, the default is './SOWPODS.txt'")
 
 args = parser.parse_args()
 
