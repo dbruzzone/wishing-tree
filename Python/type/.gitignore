@@ -1,3 +1,5 @@
 # Sub-project ignores
 SOWPODS.txt
 SOWPODS-test.txt
+
+!server/data/SOWPODS.txt
