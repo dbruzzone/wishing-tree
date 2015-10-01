@@ -28,3 +28,16 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
+
+# ...And these are my additions...
+
+semantic.json
+
+# The Git gymnastics required to only include semantic/dist/semantic.min.css
+# (It's currently the only Semantic UI file that needs to be deployed). See
+# http://git-scm.com/docs/gitignore for more information and, for the love of
+# Pete, if you know of a better way to do this, please let me know!
+/semantic/*
+!semantic/dist/
+semantic/dist/*
+!semantic/dist/semantic.min.css
