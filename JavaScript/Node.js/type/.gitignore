@@ -40,7 +40,11 @@ semantic.json
 # (It's currently the only Semantic UI file that needs to be deployed). See
 # http://git-scm.com/docs/gitignore for more information and, for the love of
 # Pete, if you know of a better way to do this, please let me know!
-/semantic/*
+semantic/*
 !semantic/dist/
 semantic/dist/*
 !semantic/dist/semantic.min.css
+
+!semantic/dist/themes
+semantic/dist/themes/*
+!semantic/dist/themes/default
