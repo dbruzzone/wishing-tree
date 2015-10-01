@@ -31,6 +31,9 @@ node_modules
 
 # ...And these are my additions...
 
+# Vim
+**/*.sw?
+
 semantic.json
 
 # The Git gymnastics required to only include semantic/dist/semantic.min.css
