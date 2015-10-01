@@ -4,8 +4,10 @@ var app = express();
 
 app.set('view engine', 'jade');
 
+app.use(express.static('semantic'));
+
 app.get('/', function (req, res) {
-  res.render('index', { title: 'A simple typing tutor', message: 'Hello.' });
+  res.render('index', { title: 'A simple typing tutor' });
 });
 
 var server = app.listen(3000, function () {

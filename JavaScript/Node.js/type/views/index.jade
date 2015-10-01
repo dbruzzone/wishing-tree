@@ -1,5 +1,30 @@
 html
   head
     title!= title
+
+    link(href='/dist/semantic.min.css', rel='stylesheet')
+
+    style(type='text/css').
+      body > .grid {
+        height: 100%;
+      }
+      .column {
+        max-width: 450px;
+      } 
   body
-    h1!= message
+    div(class='ui middle aligned center aligned grid')
+      div(class='column')
+        form(class='ui large form')
+          div(class='ui segment')
+            div(class='field')
+              div(class='ui left icon input')
+                i(class='user icon')
+                input(type='text', name='email', placeholder='E-mail address')
+            div(class='field')
+              div(class='ui left icon input')
+                i(class='lock icon')
+                input(type='password', name='password', placeholder='Password')
+            div(class='ui fluid large blue submit button') Login
+          div(class='ui error message')
+        div(class='ui message') Don't have an account? 
+          a(href='#') Sign Up
