@@ -1,0 +1,15 @@
+{
+  "name": "type",
+  "version": "0.1.0",
+  "description": "A simple Web-based typing tutor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Davide Bruzzone <davide.bruzzone@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
+}
