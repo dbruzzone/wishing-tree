@@ -14,7 +14,11 @@ html
   body
     div(class='ui middle aligned center aligned grid')
       div(class='column')
-        form(class='ui large form')
+        -if (message != '')
+          div(class='ui info message')
+            i(class='close icon')
+            !{message}
+        form(class='ui large form', action='/signup', method='post')
           div(class='ui segment')
             div(class='field')
               div(class='ui left icon input')
@@ -26,5 +30,5 @@ html
                 input(type='password', name='password', placeholder='Password')
             div(class='ui fluid large blue submit button') Login
           div(class='ui error message')
-        div(class='ui message') Don't have an account? 
-          a(href='/signup') Sign up
+        div(class='ui message') Already have an account? 
+          a(href='/login') Log in

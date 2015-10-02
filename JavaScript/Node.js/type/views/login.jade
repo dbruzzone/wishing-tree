@@ -14,7 +14,11 @@ html
   body
     div(class='ui middle aligned center aligned grid')
       div(class='column')
-        form(class='ui large form')
+        -if (message != '')
+          div(class='ui info message')
+            i(class='close icon')
+            !{message}
+        form(class='ui large form', action='/login', method='post')
           div(class='ui segment')
             div(class='field')
               div(class='ui left icon input')
