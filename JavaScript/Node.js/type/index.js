@@ -29,6 +29,8 @@ app.use(express.static('semantic'));
 mongoose.connect(nconf.get('MONGOLAB_URI')); // Connect to the database
 
 // Passport configuration
+require('./config/passport')(passport);
+
 app.use(session({ secret: 'haveyoubeenupmywishingtree' })); // Set the session secret
 app.use(passport.initialize());
 app.use(passport.session()); // Add support for persistent login sessions...
@@ -43,6 +45,13 @@ app.get('/', function (req, res) {
 app.get('/signup', function(req, res) {
   res.render('signup', { title: 'Sign up', message: req.flash('signupMessage') });
 });
+
+app.post('/signup', passport.authenticate('local-signup', {
+  // TODO
+  successRedirect: '/profile', // Redirect to the home page (for now)
+  failureRedirect: '/signup', // Redirect back to the signup page if an error occurs
+  failureFlash: true // Allow flash messages
+}));
 
 // Log in
 app.get('/login', function(req, res) {
