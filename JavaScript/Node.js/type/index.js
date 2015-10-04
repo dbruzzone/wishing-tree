@@ -47,8 +47,7 @@ app.get('/signup', function(req, res) {
 });
 
 app.post('/signup', passport.authenticate('local-signup', {
-  // TODO
-  successRedirect: '/profile', // Redirect to the home page (for now)
+  successRedirect: '/profile', // Redirect the user to their profile page
   failureRedirect: '/signup', // Redirect back to the signup page if an error occurs
   failureFlash: true // Allow flash messages
 }));
@@ -57,6 +56,12 @@ app.post('/signup', passport.authenticate('local-signup', {
 app.get('/login', function(req, res) {
   res.render('login', { title: 'Log in', message: req.flash('loginMessage') }); 
 });
+
+app.post('/login', passport.authenticate('local-login', {
+  successRedirect: '/profile', // Redirect the user to their profile page
+  failureRedirect: '/login', // Redirect back to the login page if an error occurs
+  failureFlash: true // Allow flash messages
+}));
 
 // Log out
 app.get('/logout', function(req, res) {

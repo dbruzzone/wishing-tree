@@ -1,0 +1,17 @@
+html
+  head
+    title!= title
+
+    link(href='/dist/semantic.min.css', rel='stylesheet')
+
+    style(type='text/css').
+      body > .grid {
+        height: 100%;
+      }
+      .column {
+        max-width: 450px;
+      } 
+  body
+    div(class='ui middle aligned center aligned grid')
+      div(class='column')
+        Your profile

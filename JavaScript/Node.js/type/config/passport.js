@@ -40,14 +40,14 @@ module.exports = function(passport) {
     // User.findOne won't fire unless data is sent back
     process.nextTick(function() {
       // Find a user whose e-mail address is equal to the e-mail address in the request (to
-      // check whether the user who's trying to log in already exists)
-      User.findOne({ 'local.email':  email }, function(err, user) {
+      // check whether the user who's trying to sign up already exists)
+      User.findOne({ 'local.email': email }, function(err, user) {
         // If an error occurs, return it
         if (err) {
           return done(err);
         }
 
-        // Check whether the user who's trying to log in already exists
+        // Check whether the user who's trying to sign up already exists
         if (user) {
           return done(null, false, req.flash('signupMessage', 'A user with that e-mail address already exists'));
         } else {
@@ -68,6 +68,36 @@ module.exports = function(passport) {
           });
         }
       });    
+    });
+  }));
+
+  // Local login configuration
+  //
+  // We use named strategies because we have one for signup and one for login. By default,
+  // the name is 'local' if a name isn't specified
+  passport.use('local-login', new LocalStrategy({
+    // By default, the local strategy uses 'username' and 'password';, we use 'email'
+    // instead of 'username'
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true // This allows us to pass the entire request back to the callback
+  },
+  function(req, email, password, done) {
+    // Find a user whose e-mail address is equal to the e-mail address in the request (to
+    // check whether the user who's trying to log in already exists)
+    User.findOne({ 'local.email': email }, function(err, user) {
+      // If an error occurs, return it
+      if (err) {
+        return done(err);
+      }
+
+      // If the user isn't found or the specified password is incorrect...
+      if (!user || !user.validPassword(password)) {
+        return done(null, false, req.flash('loginMessage', 'The specified e-mail address and/or password is incorrect'));
+      }
+
+      // All's well; return the user
+      return done(null, user);
     });
   }));
 };
