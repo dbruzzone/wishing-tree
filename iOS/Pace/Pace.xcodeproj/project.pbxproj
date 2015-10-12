@@ -15,6 +15,7 @@
 		2139753F1BCAF975000A4419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2139753D1BCAF975000A4419 /* LaunchScreen.storyboard */; };
 		2139754A1BCAF976000A4419 /* PaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975491BCAF976000A4419 /* PaceTests.swift */; };
 		213975551BCAF976000A4419 /* PaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975541BCAF976000A4419 /* PaceUITests.swift */; };
+		213975631BCC3883000A4419 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975621BCC3883000A4419 /* LocationManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		213975501BCAF976000A4419 /* PaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213975541BCAF976000A4419 /* PaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceUITests.swift; sourceTree = "<group>"; };
 		213975561BCAF976000A4419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		213975621BCC3883000A4419 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2139753D1BCAF975000A4419 /* LaunchScreen.storyboard */,
 				213975401BCAF975000A4419 /* Info.plist */,
 				213975381BCAF975000A4419 /* Pace.xcdatamodeld */,
+				213975621BCC3883000A4419 /* LocationManager.swift */,
 			);
 			path = Pace;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213975631BCC3883000A4419 /* LocationManager.swift in Sources */,
 				213975341BCAF975000A4419 /* ViewController.swift in Sources */,
 				213975321BCAF975000A4419 /* AppDelegate.swift in Sources */,
 				2139753A1BCAF975000A4419 /* Pace.xcdatamodeld in Sources */,
