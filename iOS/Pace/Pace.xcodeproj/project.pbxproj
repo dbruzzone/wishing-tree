@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		213975321BCAF975000A4419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975311BCAF975000A4419 /* AppDelegate.swift */; };
-		213975341BCAF975000A4419 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975331BCAF975000A4419 /* ViewController.swift */; };
 		213975371BCAF975000A4419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 213975351BCAF975000A4419 /* Main.storyboard */; };
 		2139753A1BCAF975000A4419 /* Pace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 213975381BCAF975000A4419 /* Pace.xcdatamodeld */; };
 		2139753C1BCAF975000A4419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2139753B1BCAF975000A4419 /* Assets.xcassets */; };
@@ -16,6 +15,8 @@
 		2139754A1BCAF976000A4419 /* PaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975491BCAF976000A4419 /* PaceTests.swift */; };
 		213975551BCAF976000A4419 /* PaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975541BCAF976000A4419 /* PaceUITests.swift */; };
 		213975631BCC3883000A4419 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975621BCC3883000A4419 /* LocationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E69551BCD67CD00665BFB /* InitialTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EFB1801BCEC1E600620590 /* ActivityViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 /* Begin PBXFileReference section */
 		2139752E1BCAF975000A4419 /* Pace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		213975311BCAF975000A4419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		213975331BCAF975000A4419 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		213975361BCAF975000A4419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		213975391BCAF975000A4419 /* Pace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pace.xcdatamodel; sourceTree = "<group>"; };
 		2139753B1BCAF975000A4419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		213975541BCAF976000A4419 /* PaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceUITests.swift; sourceTree = "<group>"; };
 		213975561BCAF976000A4419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		213975621BCC3883000A4419 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		218E69551BCD67CD00665BFB /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialTableViewController.swift; path = ../InitialTableViewController.swift; sourceTree = "<group>"; };
+		21EFB1801BCEC1E600620590 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				213975311BCAF975000A4419 /* AppDelegate.swift */,
-				213975331BCAF975000A4419 /* ViewController.swift */,
+				218E69551BCD67CD00665BFB /* InitialTableViewController.swift */,
 				213975351BCAF975000A4419 /* Main.storyboard */,
 				2139753B1BCAF975000A4419 /* Assets.xcassets */,
 				2139753D1BCAF975000A4419 /* LaunchScreen.storyboard */,
 				213975401BCAF975000A4419 /* Info.plist */,
 				213975381BCAF975000A4419 /* Pace.xcdatamodeld */,
 				213975621BCC3883000A4419 /* LocationManager.swift */,
+				21EFB1801BCEC1E600620590 /* ActivityViewController.swift */,
 			);
 			path = Pace;
 			sourceTree = "<group>";
@@ -261,9 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */,
 				213975631BCC3883000A4419 /* LocationManager.swift in Sources */,
-				213975341BCAF975000A4419 /* ViewController.swift in Sources */,
 				213975321BCAF975000A4419 /* AppDelegate.swift in Sources */,
+				21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */,
 				2139753A1BCAF975000A4419 /* Pace.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +495,7 @@
 				2139755B1BCAF976000A4419 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2139755C1BCAF976000A4419 /* Build configuration list for PBXNativeTarget "PaceTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				2139755E1BCAF976000A4419 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2139755F1BCAF976000A4419 /* Build configuration list for PBXNativeTarget "PaceUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				213975611BCAF976000A4419 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
