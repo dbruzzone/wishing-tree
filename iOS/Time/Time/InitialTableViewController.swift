@@ -10,7 +10,15 @@ import UIKit
 
 class InitialTableViewController: UITableViewController {
 
-    var activities = [ "One", "Two", "Three" ]
+    var activities =
+        [ "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+          "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"]
+
+    var timer = NSTimer()
+
+    var counter = 0
+
+    let searchCharacter: Character = ":"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +32,8 @@ class InitialTableViewController: UITableViewController {
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
 
         self.tableView.contentInset = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)
+
+        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "logTime", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,5 +106,29 @@ class InitialTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    func logTime() {
+        let visibleIndexPaths = self.tableView.indexPathsForVisibleRows
+
+        for visibleIndexPath in visibleIndexPaths! {
+            let activity = activities[visibleIndexPath.row]
+
+            // Update the activities that are currently visible in the table view...
+            let searchCharacterIndex = activity.characters.indexOf(searchCharacter)
+
+            if (searchCharacterIndex != nil) {
+                // If the activity contains a ':', get all the its characters up to but not
+                // including the ':'
+                let beginning = activity.substringToIndex((searchCharacterIndex?.successor())!)
+
+                activities[visibleIndexPath.row] = "\(beginning): \(String(counter))"
+            } else {
+                // If the activity doesn't contain a ':'...
+                activities[visibleIndexPath.row] = "\(activity): \(String(counter))"
+            }
+        }
+
+        self.tableView.reloadRowsAtIndexPaths(visibleIndexPaths!, withRowAnimation: UITableViewRowAnimation.None)
+    }
 
 }
