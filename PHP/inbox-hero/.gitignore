@@ -1,0 +1,8 @@
+# Vim
+.sw?
+
+# PHP
+vendor
+
+# Goodle
+client_secret.json
