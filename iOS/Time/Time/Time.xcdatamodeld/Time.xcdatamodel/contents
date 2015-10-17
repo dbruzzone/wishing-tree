@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Activity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activityPeriods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityPeriod" syncable="YES"/>
+    </entity>
+    <entity name="ActivityPeriod" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Activity" positionX="-54" positionY="0" width="128" height="75"/>
+        <element name="ActivityPeriod" positionX="-36" positionY="18" width="128" height="75"/>
+    </elements>
 </model>
