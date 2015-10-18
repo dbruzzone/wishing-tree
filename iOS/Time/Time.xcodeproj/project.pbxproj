@@ -15,6 +15,12 @@
 		213974911BC85952000A4419 /* TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213974901BC85952000A4419 /* TimeTests.swift */; };
 		2139749C1BC85952000A4419 /* TimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139749B1BC85952000A4419 /* TimeUITests.swift */; };
 		213975241BC99C61000A4419 /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213975231BC99C61000A4419 /* InitialTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		215E30421BD42A81009A716B /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E303C1BD42A81009A716B /* Category+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		215E30431BD42A81009A716B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E303D1BD42A81009A716B /* Category.swift */; settings = {ASSET_TAGS = (); }; };
+		215E30441BD42A81009A716B /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E303E1BD42A81009A716B /* Activity+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		215E30451BD42A81009A716B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E303F1BD42A81009A716B /* Activity.swift */; settings = {ASSET_TAGS = (); }; };
+		215E30461BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		215E30471BD42A81009A716B /* ActivityPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E30411BD42A81009A716B /* ActivityPeriod.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		2139749B1BC85952000A4419 /* TimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUITests.swift; sourceTree = "<group>"; };
 		2139749D1BC85952000A4419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		213975231BC99C61000A4419 /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
+		215E303C1BD42A81009A716B /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "../Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		215E303D1BD42A81009A716B /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../Category.swift; sourceTree = "<group>"; };
+		215E303E1BD42A81009A716B /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Activity+CoreDataProperties.swift"; path = "../Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		215E303F1BD42A81009A716B /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Activity.swift; sourceTree = "<group>"; };
+		215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ActivityPeriod+CoreDataProperties.swift"; path = "../ActivityPeriod+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		215E30411BD42A81009A716B /* ActivityPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityPeriod.swift; path = ../ActivityPeriod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		213974771BC85952000A4419 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				215E30481BD42AA9009A716B /* Entities */,
 				213974781BC85952000A4419 /* AppDelegate.swift */,
 				2139747C1BC85952000A4419 /* Main.storyboard */,
 				213975231BC99C61000A4419 /* InitialTableViewController.swift */,
@@ -126,6 +139,19 @@
 				2139749D1BC85952000A4419 /* Info.plist */,
 			);
 			path = TimeUITests;
+			sourceTree = "<group>";
+		};
+		215E30481BD42AA9009A716B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				215E303C1BD42A81009A716B /* Category+CoreDataProperties.swift */,
+				215E303D1BD42A81009A716B /* Category.swift */,
+				215E303E1BD42A81009A716B /* Activity+CoreDataProperties.swift */,
+				215E303F1BD42A81009A716B /* Activity.swift */,
+				215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */,
+				215E30411BD42A81009A716B /* ActivityPeriod.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +285,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				213974811BC85952000A4419 /* Time.xcdatamodeld in Sources */,
+				215E30431BD42A81009A716B /* Category.swift in Sources */,
+				215E30451BD42A81009A716B /* Activity.swift in Sources */,
+				215E30471BD42A81009A716B /* ActivityPeriod.swift in Sources */,
+				215E30441BD42A81009A716B /* Activity+CoreDataProperties.swift in Sources */,
 				213975241BC99C61000A4419 /* InitialTableViewController.swift in Sources */,
+				215E30461BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift in Sources */,
 				213974791BC85952000A4419 /* AppDelegate.swift in Sources */,
+				215E30421BD42A81009A716B /* Category+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

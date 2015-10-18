@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
-    <entity name="Activity" syncable="YES">
+    <entity name="Activity" representedClassName=".Activity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="activityPeriods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityPeriod" syncable="YES"/>
     </entity>
-    <entity name="ActivityPeriod" syncable="YES">
+    <entity name="ActivityPeriod" representedClassName=".ActivityPeriod" syncable="YES">
         <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
-    <entity name="Category" syncable="YES">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
     </entity>
