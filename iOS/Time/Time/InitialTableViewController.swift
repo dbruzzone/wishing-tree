@@ -29,6 +29,8 @@ class InitialTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
+        self.title = "Time"
+
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
 
         self.tableView.contentInset = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0)

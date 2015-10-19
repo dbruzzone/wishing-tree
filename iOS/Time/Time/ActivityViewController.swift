@@ -14,6 +14,8 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        self.title = "Activity"
     }
 
     override func didReceiveMemoryWarning() {
