@@ -121,7 +121,7 @@ class InitialTableViewController: UITableViewController {
             if (searchCharacterIndex != nil) {
                 // If the activity contains a ':', get all the its characters up to but not
                 // including the ':'
-                let beginning = activity.substringToIndex((searchCharacterIndex?.successor())!)
+                let beginning = activity.substringToIndex((searchCharacterIndex)!)
 
                 activities[visibleIndexPath.row] = "\(beginning): \(String(counter))"
             } else {
@@ -131,6 +131,8 @@ class InitialTableViewController: UITableViewController {
         }
 
         self.tableView.reloadRowsAtIndexPaths(visibleIndexPaths!, withRowAnimation: UITableViewRowAnimation.None)
+
+        counter++
     }
 
 }
