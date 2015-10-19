@@ -21,6 +21,7 @@
 		215E30451BD42A81009A716B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E303F1BD42A81009A716B /* Activity.swift */; settings = {ASSET_TAGS = (); }; };
 		215E30461BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		215E30471BD42A81009A716B /* ActivityPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E30411BD42A81009A716B /* ActivityPeriod.swift */; settings = {ASSET_TAGS = (); }; };
+		215E304D1BD56EFE009A716B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E304C1BD56EFE009A716B /* ActivityViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		215E303F1BD42A81009A716B /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Activity.swift; sourceTree = "<group>"; };
 		215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ActivityPeriod+CoreDataProperties.swift"; path = "../ActivityPeriod+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		215E30411BD42A81009A716B /* ActivityPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityPeriod.swift; path = ../ActivityPeriod.swift; sourceTree = "<group>"; };
+		215E304C1BD56EFE009A716B /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +113,10 @@
 		213974771BC85952000A4419 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				215E304B1BD56EB7009A716B /* View controllers */,
 				215E30481BD42AA9009A716B /* Entities */,
 				213974781BC85952000A4419 /* AppDelegate.swift */,
 				2139747C1BC85952000A4419 /* Main.storyboard */,
-				213975231BC99C61000A4419 /* InitialTableViewController.swift */,
 				213974821BC85952000A4419 /* Assets.xcassets */,
 				213974841BC85952000A4419 /* LaunchScreen.storyboard */,
 				213974871BC85952000A4419 /* Info.plist */,
@@ -152,6 +154,15 @@
 				215E30411BD42A81009A716B /* ActivityPeriod.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		215E304B1BD56EB7009A716B /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				213975231BC99C61000A4419 /* InitialTableViewController.swift */,
+				215E304C1BD56EFE009A716B /* ActivityViewController.swift */,
+			);
+			name = "View controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				213974811BC85952000A4419 /* Time.xcdatamodeld in Sources */,
 				215E30431BD42A81009A716B /* Category.swift in Sources */,
 				215E30451BD42A81009A716B /* Activity.swift in Sources */,
+				215E304D1BD56EFE009A716B /* ActivityViewController.swift in Sources */,
 				215E30471BD42A81009A716B /* ActivityPeriod.swift in Sources */,
 				215E30441BD42A81009A716B /* Activity+CoreDataProperties.swift in Sources */,
 				213975241BC99C61000A4419 /* InitialTableViewController.swift in Sources */,
