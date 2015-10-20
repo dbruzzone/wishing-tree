@@ -92,6 +92,24 @@
             </objects>
             <point key="canvasLocation" x="1593" y="950"/>
         </scene>
+        <!--Category View Controller-->
+        <scene sceneID="eIF-V4-nSg">
+            <objects>
+                <viewController id="x9z-TC-aNR" customClass="CategoryViewController" customModule="Time" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="97r-ct-Z4Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Gi-ug-Cf1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pnx-GU-Jhl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xmr-5r-dp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593" y="1665"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="849-9Z-T9J">
             <objects>

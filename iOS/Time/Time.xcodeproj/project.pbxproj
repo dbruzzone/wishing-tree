@@ -22,6 +22,7 @@
 		215E30461BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		215E30471BD42A81009A716B /* ActivityPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E30411BD42A81009A716B /* ActivityPeriod.swift */; settings = {ASSET_TAGS = (); }; };
 		215E304D1BD56EFE009A716B /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E304C1BD56EFE009A716B /* ActivityViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		215E304F1BD6CC9A009A716B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215E304E1BD6CC9A009A716B /* CategoryViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		215E30401BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ActivityPeriod+CoreDataProperties.swift"; path = "../ActivityPeriod+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		215E30411BD42A81009A716B /* ActivityPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityPeriod.swift; path = ../ActivityPeriod.swift; sourceTree = "<group>"; };
 		215E304C1BD56EFE009A716B /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		215E304E1BD6CC9A009A716B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				213975231BC99C61000A4419 /* InitialTableViewController.swift */,
 				215E304C1BD56EFE009A716B /* ActivityViewController.swift */,
+				215E304E1BD6CC9A009A716B /* CategoryViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				213975241BC99C61000A4419 /* InitialTableViewController.swift in Sources */,
 				215E30461BD42A81009A716B /* ActivityPeriod+CoreDataProperties.swift in Sources */,
 				213974791BC85952000A4419 /* AppDelegate.swift in Sources */,
+				215E304F1BD6CC9A009A716B /* CategoryViewController.swift in Sources */,
 				215E30421BD42A81009A716B /* Category+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
