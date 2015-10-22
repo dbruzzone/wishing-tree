@@ -103,15 +103,14 @@
 		213975301BCAF975000A4419 /* Pace */ = {
 			isa = PBXGroup;
 			children = (
+				217F662A1BD9350F00459616 /* View controllers */,
 				213975311BCAF975000A4419 /* AppDelegate.swift */,
-				218E69551BCD67CD00665BFB /* InitialTableViewController.swift */,
 				213975351BCAF975000A4419 /* Main.storyboard */,
 				2139753B1BCAF975000A4419 /* Assets.xcassets */,
 				2139753D1BCAF975000A4419 /* LaunchScreen.storyboard */,
 				213975401BCAF975000A4419 /* Info.plist */,
 				213975381BCAF975000A4419 /* Pace.xcdatamodeld */,
 				213975621BCC3883000A4419 /* LocationManager.swift */,
-				21EFB1801BCEC1E600620590 /* ActivityViewController.swift */,
 			);
 			path = Pace;
 			sourceTree = "<group>";
@@ -132,6 +131,15 @@
 				213975561BCAF976000A4419 /* Info.plist */,
 			);
 			path = PaceUITests;
+			sourceTree = "<group>";
+		};
+		217F662A1BD9350F00459616 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				218E69551BCD67CD00665BFB /* InitialTableViewController.swift */,
+				21EFB1801BCEC1E600620590 /* ActivityViewController.swift */,
+			);
+			name = "View controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
