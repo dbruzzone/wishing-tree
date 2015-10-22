@@ -139,6 +139,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="timePicker" destination="YvP-aJ-spq" id="d1m-aj-Fog"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4a-sH-9Al" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
