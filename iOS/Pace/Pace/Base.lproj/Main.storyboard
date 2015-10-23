@@ -94,6 +94,9 @@
                                 <rect key="frame" x="20" y="167" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="touchDown:" destination="EYs-cA-5vu" eventType="touchDown" id="utb-fA-hKW"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-0m-1AV">
                                 <rect key="frame" x="20" y="234" width="560" height="30"/>

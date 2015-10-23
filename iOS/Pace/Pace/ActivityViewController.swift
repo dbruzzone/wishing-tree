@@ -17,10 +17,16 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     var timePickerView: UIPickerView = UIPickerView()
 
+    var currentPicker: UITextField?
+
     // MARK: - Outlets
     @IBOutlet weak var timePicker: UITextField!
     @IBOutlet weak var pacePicker: UITextField!
     @IBOutlet weak var distancePicker: UITextField!
+
+    @IBAction func touchDown(sender: AnyObject) {
+        self.currentPicker = sender as? UITextField
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,15 +36,20 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
         timePicker.text = timeText()
 
         // Set up the category picker and its toolbar
-        timePickerView.delegate = self
+        self.initPicker(timePicker, pickerView: timePickerView)
+    }
 
+    func initPicker(textField: UITextField, pickerView: UIPickerView) {
+        pickerView.delegate = self
+        
         let toolbar = UIToolbar()
-
+        
         toolbar.barStyle = UIBarStyle.Default
         toolbar.translucent = true
+        // TODO
         toolbar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
         toolbar.sizeToFit()
-
+        
         let doneButton = UIBarButtonItem(title: "Done",
             style: UIBarButtonItemStyle.Plain,
             target: self,
@@ -50,12 +61,12 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
             style: UIBarButtonItemStyle.Plain,
             target: self,
             action: "resetPicker")
-
+        
         toolbar.setItems([resetButton, spaceButton, doneButton], animated: false)
         toolbar.userInteractionEnabled = true
-
-        timePicker.inputView = timePickerView
-        timePicker.inputAccessoryView = toolbar
+        
+        textField.inputView = pickerView
+        textField.inputAccessoryView = toolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,17 +86,17 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     // MARK: - UIPickerViewDataSource
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return timeItems.count
+        return self.timeItems.count
     }
 
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return timeItems[component].count
+        return self.timeItems[component].count
     }
 
     // MARK: - UIPickerViewDelegate
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         // TODO
-        let item = timeItems[component][row]
+        let item = self.timeItems[component][row]
 
         return addLeadingZero(item)
     }
@@ -93,22 +104,24 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.currentTime[component] = self.timeItems[component][row]
 
-        timePicker.text = timeText()
+        self.timePicker.text = timeText()
     }
 
     // MARK: - Actions
     func resetPicker() {
-        self.currentTime = [ 0, 0, 0 ]
+        if (self.currentPicker == self.timePicker) {
+            self.currentTime = [ 0, 0, 0 ]
 
-        timePicker.text = timeText()
+            self.timePicker.text = timeText()
 
-        donePicker()
+            donePicker()
 
-        resetPickerView(timePickerView, range: 0..<3)
+            resetPickerView(self.timePickerView, range: 0..<3)
+        }
     }
 
     func donePicker() {
-        timePicker.resignFirstResponder()
+        self.currentPicker!.resignFirstResponder()
     }
 
     func timeText() -> String {
