@@ -140,6 +140,8 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="distancePicker" destination="0ej-PM-5nh" id="4su-0N-ffE"/>
+                        <outlet property="pacePicker" destination="Xd5-0m-1AV" id="ody-bc-kDe"/>
                         <outlet property="timePicker" destination="YvP-aJ-spq" id="d1m-aj-Fog"/>
                     </connections>
                 </viewController>

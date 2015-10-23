@@ -19,6 +19,8 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     // MARK: - Outlets
     @IBOutlet weak var timePicker: UITextField!
+    @IBOutlet weak var pacePicker: UITextField!
+    @IBOutlet weak var distancePicker: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
