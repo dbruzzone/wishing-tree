@@ -130,16 +130,39 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     // MARK: - UIPickerViewDelegate
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        // TODO
-        let item = self.timePickerValues[component][row]
+        var result: String?
 
-        return addLeadingZero(item)
+        if (pickerView == self.timePickerView) {
+            let item = self.timePickerValues[component][row]
+
+            result = addLeadingZero(item)
+        } else if (pickerView == self.pacePickerView) {
+            let item = self.pacePickerValues[component][row]
+            
+            result = addLeadingZero(item)
+        } else if (pickerView == self.distancePickerView) {
+            let item = self.distancePickerValues[component][row]
+            
+            result = component == 0 ? String(item) : addLeadingZero(item)
+        }
+
+        return result
     }
 
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.currentTime[component] = self.timePickerValues[component][row]
+        if (pickerView == self.timePickerView) {
+            self.currentTime[component] = self.timePickerValues[component][row]
 
-        self.timePicker.text = timeText()
+            self.timePicker.text = timeText()
+        } else if (pickerView == self.pacePickerView) {
+            self.currentPace[component] = self.pacePickerValues[component][row]
+            
+            self.pacePicker.text = paceText()
+        }  else if (pickerView == self.distancePickerView) {
+            self.currentDistance[component] = self.distancePickerValues[component][row]
+            
+            self.distancePicker.text = distanceText()
+        }
     }
 
     // MARK: - Actions
@@ -147,17 +170,17 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if (self.currentPicker == self.timePicker) {
             self.currentTime = [ 0, 0, 0 ]
 
-            resetFieldAndPicker(self.timePicker, textFieldValue: self.timeText(), pickerView: self.timePickerView)
+            resetFieldAndPicker(self.timePicker, textFieldValue: self.timeText(), pickerView: self.timePickerView, numberOfComponents: 3)
         } else if (self.currentPicker == self.pacePicker) {
             self.currentPace = [ 0, 0 ]
             self.currentPaceUnitsIndex = 0
 
-            resetFieldAndPicker(self.pacePicker, textFieldValue: self.paceText(), pickerView: self.pacePickerView)
+            resetFieldAndPicker(self.pacePicker, textFieldValue: self.paceText(), pickerView: self.pacePickerView, numberOfComponents: 2)
         } else if (self.currentPicker == self.distancePicker) {
             self.currentDistance = [ 0, 0 ]
             self.currentDistanceUnitsIndex = 0
             
-            resetFieldAndPicker(self.distancePicker, textFieldValue: self.distanceText(), pickerView: self.distancePickerView)
+            resetFieldAndPicker(self.distancePicker, textFieldValue: self.distanceText(), pickerView: self.distancePickerView, numberOfComponents: 2)
         }
     }
 
@@ -170,11 +193,11 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     func paceText() -> String {
-        return "\(addLeadingZero(self.currentTime[0])):\(addLeadingZero(self.currentTime[1])) per \(self.distanceUnits[self.currentPaceUnitsIndex])"
+        return "\(addLeadingZero(self.currentPace[0])):\(addLeadingZero(self.currentPace[1])) per \(self.distanceUnits[self.currentPaceUnitsIndex])"
     }
 
     func distanceText() -> String {
-        return "\(self.currentTime[0]).\(addLeadingZero(self.currentTime[1])) \(self.distanceUnits[self.currentDistanceUnitsIndex])"
+        return "\(self.currentDistance[0]).\(addLeadingZero(self.currentDistance[1])) \(self.distanceUnits[self.currentDistanceUnitsIndex])"
     }
 
     func addLeadingZero(num: Int) -> String {
@@ -191,12 +214,12 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return result
     }
 
-    func resetFieldAndPicker(textField: UITextField, textFieldValue: String, pickerView: UIPickerView) {
+    func resetFieldAndPicker(textField: UITextField, textFieldValue: String, pickerView: UIPickerView, numberOfComponents: Int) {
         textField.text = textFieldValue
         
         donePicker()
         
-        resetPickerView(pickerView, range: 0..<3)
+        resetPickerView(pickerView, range: 0..<numberOfComponents)
     }
 
     func resetPickerView(pickerView: UIPickerView, range: Range<Int>) {
