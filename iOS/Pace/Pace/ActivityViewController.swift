@@ -15,14 +15,13 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var pacePickerValues = [ Array(0..<61), Array(0..<61) ]
     var distancePickerValues = [ Array(0..<101), Array(0..<11) ]
 
-    var distanceUnits = [ "mile", "kilometer" ]
+    var distanceUnitValues = [ "mile", "kilometer" ]
+    var currentDistanceUnits: Int = 0
 
     // Current picker view values
     var currentTime: [Int] = [ 0, 0, 0 ]
     var currentPace: [Int] = [ 0, 0 ]
-    var currentPaceUnitsIndex: Int = 0
     var currentDistance: [Int] = [ 0, 0 ]
-    var currentDistanceUnitsIndex: Int = 0
 
     var timePickerView: UIPickerView = UIPickerView()
     var pacePickerView: UIPickerView = UIPickerView()
@@ -31,6 +30,8 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var currentPicker: UITextField?
 
     // MARK: - Outlets
+    @IBOutlet weak var distanceUnits: UISegmentedControl!
+
     @IBOutlet weak var timePicker: UITextField!
     @IBOutlet weak var pacePicker: UITextField!
     @IBOutlet weak var distancePicker: UITextField!
@@ -166,6 +167,20 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     // MARK: - Actions
+    @IBAction func distanceUnitsChanged(sender: AnyObject) {
+        switch distanceUnits.selectedSegmentIndex {
+        case 0:
+            self.currentDistanceUnits = 0
+        case 1:
+            self.currentDistanceUnits = 1
+        default:
+            break; 
+        }
+
+        pacePicker.text = paceText()
+        distancePicker.text = distanceText()
+    }
+
     func resetPicker() {
         if (self.currentPicker == self.timePicker) {
             self.currentTime = [ 0, 0, 0 ]
@@ -173,12 +188,10 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
             resetFieldAndPicker(self.timePicker, textFieldValue: self.timeText(), pickerView: self.timePickerView, numberOfComponents: 3)
         } else if (self.currentPicker == self.pacePicker) {
             self.currentPace = [ 0, 0 ]
-            self.currentPaceUnitsIndex = 0
 
             resetFieldAndPicker(self.pacePicker, textFieldValue: self.paceText(), pickerView: self.pacePickerView, numberOfComponents: 2)
         } else if (self.currentPicker == self.distancePicker) {
             self.currentDistance = [ 0, 0 ]
-            self.currentDistanceUnitsIndex = 0
             
             resetFieldAndPicker(self.distancePicker, textFieldValue: self.distanceText(), pickerView: self.distancePickerView, numberOfComponents: 2)
         }
@@ -193,11 +206,12 @@ class ActivityViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     func paceText() -> String {
-        return "\(addLeadingZero(self.currentPace[0])):\(addLeadingZero(self.currentPace[1])) per \(self.distanceUnits[self.currentPaceUnitsIndex])"
+        return "\(addLeadingZero(self.currentPace[0])):\(addLeadingZero(self.currentPace[1])) per \(self.distanceUnitValues[self.currentDistanceUnits])"
     }
 
     func distanceText() -> String {
-        return "\(self.currentDistance[0]).\(addLeadingZero(self.currentDistance[1])) \(self.distanceUnits[self.currentDistanceUnitsIndex])"
+        
+        return "\(self.currentDistance[0]).\(addLeadingZero(self.currentDistance[1])) \(self.distanceUnitValues[self.currentDistanceUnits])s"
     }
 
     func addLeadingZero(num: Int) -> String {
