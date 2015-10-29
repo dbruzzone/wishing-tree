@@ -23,6 +23,8 @@
 		214152D51BDD673B00B999CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214152D41BDD673B00B999CF /* Assets.xcassets */; };
 		214152D91BDD673B00B999CF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 214152BF1BDD673B00B999CF /* Watch.app */; };
 		218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E69551BCD67CD00665BFB /* InitialTableViewController.swift */; };
+		21D957C81BE284AD00636535 /* ActivityPaceBandTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */; };
+		21D957CA1BE284DD00636535 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */; };
 		21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EFB1801BCEC1E600620590 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,8 @@
 		214152D41BDD673B00B999CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214152D61BDD673B00B999CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218E69551BCD67CD00665BFB /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialTableViewController.swift; path = ../InitialTableViewController.swift; sourceTree = "<group>"; };
+		21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPaceBandTableViewController.swift; sourceTree = "<group>"; };
+		21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		21EFB1801BCEC1E600620590 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +229,8 @@
 			children = (
 				218E69551BCD67CD00665BFB /* InitialTableViewController.swift */,
 				21EFB1801BCEC1E600620590 /* ActivityViewController.swift */,
+				21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */,
+				21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -423,8 +429,10 @@
 			files = (
 				218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */,
 				213975631BCC3883000A4419 /* LocationManager.swift in Sources */,
+				21D957CA1BE284DD00636535 /* ActivityDetailViewController.swift in Sources */,
 				213975321BCAF975000A4419 /* AppDelegate.swift in Sources */,
 				21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */,
+				21D957C81BE284AD00636535 /* ActivityPaceBandTableViewController.swift in Sources */,
 				2139753A1BCAF975000A4419 /* Pace.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,6 +774,7 @@
 				214152DD1BDD673B00B999CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		214152E01BDD673B00B999CF /* Build configuration list for PBXNativeTarget "Watch" */ = {
 			isa = XCConfigurationList;
@@ -774,6 +783,7 @@
 				214152DB1BDD673B00B999CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

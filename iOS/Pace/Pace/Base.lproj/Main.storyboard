@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="2609" y="411"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Activity Pace Band Table View Controller-->
         <scene sceneID="S5S-4Y-fjJ">
             <objects>
-                <tableViewController id="4JS-Ej-G0g" sceneMemberID="viewController">
+                <tableViewController id="4JS-Ej-G0g" customClass="ActivityPaceBandTableViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vc3-MP-bdc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="3345" y="411"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity Detail View Controller-->
         <scene sceneID="1ay-21-Vhu">
             <objects>
-                <viewController id="SN8-ms-UIR" sceneMemberID="viewController">
+                <viewController id="SN8-ms-UIR" customClass="ActivityDetailViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JRd-7C-IED"/>
                         <viewControllerLayoutGuide type="bottom" id="rg1-OI-tyq"/>
