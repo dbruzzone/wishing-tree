@@ -25,6 +25,10 @@
 		218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E69551BCD67CD00665BFB /* InitialTableViewController.swift */; };
 		21D957C81BE284AD00636535 /* ActivityPaceBandTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */; };
 		21D957CA1BE284DD00636535 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */; };
+		21D957DA1BE6C5F900636535 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D61BE6C5F900636535 /* Activity+CoreDataProperties.swift */; };
+		21D957DB1BE6C5F900636535 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D71BE6C5F900636535 /* Activity.swift */; };
+		21D957DC1BE6C5F900636535 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D81BE6C5F900636535 /* Location+CoreDataProperties.swift */; };
+		21D957DD1BE6C5F900636535 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D91BE6C5F900636535 /* Location.swift */; };
 		21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EFB1801BCEC1E600620590 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +115,10 @@
 		218E69551BCD67CD00665BFB /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialTableViewController.swift; path = ../InitialTableViewController.swift; sourceTree = "<group>"; };
 		21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPaceBandTableViewController.swift; sourceTree = "<group>"; };
 		21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		21D957D61BE6C5F900636535 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Activity+CoreDataProperties.swift"; path = "../Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		21D957D71BE6C5F900636535 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Activity.swift; sourceTree = "<group>"; };
+		21D957D81BE6C5F900636535 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "../Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		21D957D91BE6C5F900636535 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = ../Location.swift; sourceTree = "<group>"; };
 		21EFB1801BCEC1E600620590 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +181,7 @@
 		213975301BCAF975000A4419 /* Pace */ = {
 			isa = PBXGroup;
 			children = (
+				21D957D51BE6C5CD00636535 /* Entities */,
 				217F662A1BD9350F00459616 /* View controllers */,
 				213975311BCAF975000A4419 /* AppDelegate.swift */,
 				213975351BCAF975000A4419 /* Main.storyboard */,
@@ -233,6 +242,17 @@
 				21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */,
 			);
 			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		21D957D51BE6C5CD00636535 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				21D957D61BE6C5F900636535 /* Activity+CoreDataProperties.swift */,
+				21D957D71BE6C5F900636535 /* Activity.swift */,
+				21D957D81BE6C5F900636535 /* Location+CoreDataProperties.swift */,
+				21D957D91BE6C5F900636535 /* Location.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,10 +448,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */,
+				21D957DD1BE6C5F900636535 /* Location.swift in Sources */,
 				213975631BCC3883000A4419 /* LocationManager.swift in Sources */,
 				21D957CA1BE284DD00636535 /* ActivityDetailViewController.swift in Sources */,
 				213975321BCAF975000A4419 /* AppDelegate.swift in Sources */,
+				21D957DC1BE6C5F900636535 /* Location+CoreDataProperties.swift in Sources */,
+				21D957DA1BE6C5F900636535 /* Activity+CoreDataProperties.swift in Sources */,
 				21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */,
+				21D957DB1BE6C5F900636535 /* Activity.swift in Sources */,
 				21D957C81BE284AD00636535 /* ActivityPaceBandTableViewController.swift in Sources */,
 				2139753A1BCAF975000A4419 /* Pace.xcdatamodeld in Sources */,
 			);
