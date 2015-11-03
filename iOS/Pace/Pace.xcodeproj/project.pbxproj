@@ -23,13 +23,14 @@
 		214152D51BDD673B00B999CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214152D41BDD673B00B999CF /* Assets.xcassets */; };
 		214152D91BDD673B00B999CF /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 214152BF1BDD673B00B999CF /* Watch.app */; };
 		218E69561BCD67CD00665BFB /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218E69551BCD67CD00665BFB /* InitialTableViewController.swift */; };
+		21D8E58E1BE7E3960079C5AC /* StartActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E58D1BE7E3960079C5AC /* StartActivityViewController.swift */; };
+		21D8E5901BE7E3D20079C5AC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E58F1BE7E3D20079C5AC /* ActivityViewController.swift */; };
 		21D957C81BE284AD00636535 /* ActivityPaceBandTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */; };
 		21D957CA1BE284DD00636535 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */; };
 		21D957DA1BE6C5F900636535 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D61BE6C5F900636535 /* Activity+CoreDataProperties.swift */; };
 		21D957DB1BE6C5F900636535 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D71BE6C5F900636535 /* Activity.swift */; };
 		21D957DC1BE6C5F900636535 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D81BE6C5F900636535 /* Location+CoreDataProperties.swift */; };
 		21D957DD1BE6C5F900636535 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D957D91BE6C5F900636535 /* Location.swift */; };
-		21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EFB1801BCEC1E600620590 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,13 +114,14 @@
 		214152D41BDD673B00B999CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214152D61BDD673B00B999CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218E69551BCD67CD00665BFB /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitialTableViewController.swift; path = ../InitialTableViewController.swift; sourceTree = "<group>"; };
+		21D8E58D1BE7E3960079C5AC /* StartActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartActivityViewController.swift; sourceTree = "<group>"; };
+		21D8E58F1BE7E3D20079C5AC /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPaceBandTableViewController.swift; sourceTree = "<group>"; };
 		21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		21D957D61BE6C5F900636535 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Activity+CoreDataProperties.swift"; path = "../Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		21D957D71BE6C5F900636535 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = ../Activity.swift; sourceTree = "<group>"; };
 		21D957D81BE6C5F900636535 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "../Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		21D957D91BE6C5F900636535 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = ../Location.swift; sourceTree = "<group>"; };
-		21EFB1801BCEC1E600620590 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,10 +238,11 @@
 		217F662A1BD9350F00459616 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				21D8E58D1BE7E3960079C5AC /* StartActivityViewController.swift */,
 				218E69551BCD67CD00665BFB /* InitialTableViewController.swift */,
-				21EFB1801BCEC1E600620590 /* ActivityViewController.swift */,
 				21D957C71BE284AD00636535 /* ActivityPaceBandTableViewController.swift */,
 				21D957C91BE284DD00636535 /* ActivityDetailViewController.swift */,
+				21D8E58F1BE7E3D20079C5AC /* ActivityViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -453,8 +456,9 @@
 				21D957CA1BE284DD00636535 /* ActivityDetailViewController.swift in Sources */,
 				213975321BCAF975000A4419 /* AppDelegate.swift in Sources */,
 				21D957DC1BE6C5F900636535 /* Location+CoreDataProperties.swift in Sources */,
+				21D8E58E1BE7E3960079C5AC /* StartActivityViewController.swift in Sources */,
+				21D8E5901BE7E3D20079C5AC /* ActivityViewController.swift in Sources */,
 				21D957DA1BE6C5F900636535 /* Activity+CoreDataProperties.swift in Sources */,
-				21EFB1811BCEC1E600620590 /* ActivityViewController.swift in Sources */,
 				21D957DB1BE6C5F900636535 /* Activity.swift in Sources */,
 				21D957C81BE284AD00636535 /* ActivityPaceBandTableViewController.swift in Sources */,
 				2139753A1BCAF975000A4419 /* Pace.xcdatamodeld in Sources */,
