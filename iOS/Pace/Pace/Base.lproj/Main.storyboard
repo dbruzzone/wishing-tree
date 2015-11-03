@@ -47,7 +47,7 @@
         <!--Start Activity View Controller-->
         <scene sceneID="cgl-8h-kMf">
             <objects>
-                <viewController id="EYs-cA-5vu" customClass="StartActivityViewController" sceneMemberID="viewController">
+                <viewController id="EYs-cA-5vu" customClass="StartActivityViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q4X-R0-Wgp"/>
                         <viewControllerLayoutGuide type="bottom" id="Vr6-DR-7bZ"/>
@@ -81,6 +81,9 @@
                                 <rect key="frame" x="20" y="518" width="560" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startActivity:" destination="EYs-cA-5vu" eventType="touchUpInside" id="Khj-DP-na7"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fjx-qo-aKX">
                                 <rect key="frame" x="73" y="136" width="507" height="29"/>
@@ -185,10 +188,10 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="distancePicker" destination="0ej-PM-5nh" id="4su-0N-ffE"/>
-                        <outlet property="distanceUnits" destination="fjx-qo-aKX" id="URE-jE-qxd"/>
-                        <outlet property="pacePicker" destination="Xd5-0m-1AV" id="ody-bc-kDe"/>
-                        <outlet property="timePicker" destination="YvP-aJ-spq" id="d1m-aj-Fog"/>
+                        <outlet property="distancePicker" destination="0ej-PM-5nh" id="gVl-uI-YOe"/>
+                        <outlet property="distanceUnits" destination="fjx-qo-aKX" id="yjW-u5-SYN"/>
+                        <outlet property="pacePicker" destination="Xd5-0m-1AV" id="l9m-Yd-jeW"/>
+                        <outlet property="timePicker" destination="YvP-aJ-spq" id="w6l-gx-kAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s4a-sH-9Al" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,12 +204,12 @@
                 <pageViewController storyboardIdentifier="ActivityPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="XGM-Tv-UBp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2t-by-Z0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="411"/>
+            <point key="canvasLocation" x="2605" y="1138"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="xuC-1w-BPz">
             <objects>
-                <viewController id="ayE-no-l0Y" customClass="ActivityViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityViewController" id="ayE-no-l0Y" customClass="ActivityViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KqT-T1-h3Z"/>
                         <viewControllerLayoutGuide type="bottom" id="dKX-Pz-QX2"/>
@@ -220,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JL-DS-lVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="1138"/>
+            <point key="canvasLocation" x="2605" y="411"/>
         </scene>
         <!--Activity Pace Band Table View Controller-->
         <scene sceneID="S5S-4Y-fjJ">

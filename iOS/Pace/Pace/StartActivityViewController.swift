@@ -201,6 +201,12 @@ class StartActivityViewController: UIViewController, UIPickerViewDataSource, UIP
         self.currentPicker!.resignFirstResponder()
     }
 
+    @IBAction func startActivity(sender: AnyObject) {
+        let activityViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ActivityViewController") as! ActivityViewController
+
+        self.presentViewController(activityViewController, animated:true, completion:nil)
+    }
+
     func timeText() -> String {
         return "\(addLeadingZero(self.currentTime[0])):\(addLeadingZero(self.currentTime[1])):\(addLeadingZero(self.currentTime[2]))"
     }
