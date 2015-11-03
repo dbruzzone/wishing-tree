@@ -204,7 +204,7 @@ class StartActivityViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBAction func startActivity(sender: AnyObject) {
         let activityViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ActivityViewController") as! ActivityViewController
 
-        self.presentViewController(activityViewController, animated:true, completion:nil)
+        self.navigationController!.pushViewController(activityViewController, animated: true)
     }
 
     func timeText() -> String {
