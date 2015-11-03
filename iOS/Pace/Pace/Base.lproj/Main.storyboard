@@ -225,10 +225,11 @@
         <!--Activity Pace Band Table View Controller-->
         <scene sceneID="S5S-4Y-fjJ">
             <objects>
-                <tableViewController id="4JS-Ej-G0g" customClass="ActivityPaceBandTableViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ActivityPaceBandTableViewController" id="4JS-Ej-G0g" customClass="ActivityPaceBandTableViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vc3-MP-bdc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="dyd-Lp-7KT">
@@ -237,7 +238,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dyd-Lp-7KT" id="LCg-tB-haX">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -253,7 +256,7 @@
         <!--Activity Detail View Controller-->
         <scene sceneID="1ay-21-Vhu">
             <objects>
-                <viewController id="SN8-ms-UIR" customClass="ActivityDetailViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityDetailViewController" id="SN8-ms-UIR" customClass="ActivityDetailViewController" customModule="Pace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JRd-7C-IED"/>
                         <viewControllerLayoutGuide type="bottom" id="rg1-OI-tyq"/>
@@ -261,6 +264,7 @@
                     <view key="view" contentMode="scaleToFill" id="t70-P6-eEm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -276,6 +280,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gF-TJ-kFg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
