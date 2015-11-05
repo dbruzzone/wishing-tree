@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21D8E5DB1BEADFBB0079C5AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5DA1BEADFBB0079C5AC /* AppDelegate.swift */; };
+		21D8E5DD1BEADFBB0079C5AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5DC1BEADFBB0079C5AC /* ViewController.swift */; };
+		21D8E5E01BEADFBB0079C5AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D8E5DE1BEADFBB0079C5AC /* Main.storyboard */; };
+		21D8E5E31BEADFBB0079C5AC /* Microsoft_Band.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5E11BEADFBB0079C5AC /* Microsoft_Band.xcdatamodeld */; };
+		21D8E5E51BEADFBB0079C5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D8E5E41BEADFBB0079C5AC /* Assets.xcassets */; };
+		21D8E5E81BEADFBB0079C5AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D8E5E61BEADFBB0079C5AC /* LaunchScreen.storyboard */; };
+		21D8E5F31BEADFBB0079C5AC /* Microsoft_BandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5F21BEADFBB0079C5AC /* Microsoft_BandTests.swift */; };
+		21D8E5FE1BEADFBB0079C5AC /* Microsoft_BandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5FD1BEADFBB0079C5AC /* Microsoft_BandUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21D8E5EF1BEADFBB0079C5AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D8E5CF1BEADFBB0079C5AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D8E5D61BEADFBB0079C5AC;
+			remoteInfo = "Microsoft-Band";
+		};
+		21D8E5FA1BEADFBB0079C5AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21D8E5CF1BEADFBB0079C5AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21D8E5D61BEADFBB0079C5AC;
+			remoteInfo = "Microsoft-Band";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21D8E5D71BEADFBB0079C5AC /* Microsoft-Band.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Microsoft-Band.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D8E5DA1BEADFBB0079C5AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21D8E5DC1BEADFBB0079C5AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21D8E5DF1BEADFBB0079C5AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21D8E5E21BEADFBB0079C5AC /* Microsoft_Band.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Microsoft_Band.xcdatamodel; sourceTree = "<group>"; };
+		21D8E5E41BEADFBB0079C5AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21D8E5E71BEADFBB0079C5AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		21D8E5E91BEADFBB0079C5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D8E5EE1BEADFBB0079C5AC /* Microsoft-BandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Microsoft-BandTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D8E5F21BEADFBB0079C5AC /* Microsoft_BandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microsoft_BandTests.swift; sourceTree = "<group>"; };
+		21D8E5F41BEADFBB0079C5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D8E5F91BEADFBB0079C5AC /* Microsoft-BandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Microsoft-BandUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21D8E5FD1BEADFBB0079C5AC /* Microsoft_BandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microsoft_BandUITests.swift; sourceTree = "<group>"; };
+		21D8E5FF1BEADFBB0079C5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21D8E5D41BEADFBB0079C5AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D8E5EB1BEADFBB0079C5AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D8E5F61BEADFBB0079C5AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21D8E5CE1BEADFBB0079C5AC = {
+			isa = PBXGroup;
+			children = (
+				21D8E5D91BEADFBB0079C5AC /* Microsoft-Band */,
+				21D8E5F11BEADFBB0079C5AC /* Microsoft-BandTests */,
+				21D8E5FC1BEADFBB0079C5AC /* Microsoft-BandUITests */,
+				21D8E5D81BEADFBB0079C5AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21D8E5D81BEADFBB0079C5AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21D8E5D71BEADFBB0079C5AC /* Microsoft-Band.app */,
+				21D8E5EE1BEADFBB0079C5AC /* Microsoft-BandTests.xctest */,
+				21D8E5F91BEADFBB0079C5AC /* Microsoft-BandUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21D8E5D91BEADFBB0079C5AC /* Microsoft-Band */ = {
+			isa = PBXGroup;
+			children = (
+				21D8E5DA1BEADFBB0079C5AC /* AppDelegate.swift */,
+				21D8E5DC1BEADFBB0079C5AC /* ViewController.swift */,
+				21D8E5DE1BEADFBB0079C5AC /* Main.storyboard */,
+				21D8E5E41BEADFBB0079C5AC /* Assets.xcassets */,
+				21D8E5E61BEADFBB0079C5AC /* LaunchScreen.storyboard */,
+				21D8E5E91BEADFBB0079C5AC /* Info.plist */,
+				21D8E5E11BEADFBB0079C5AC /* Microsoft_Band.xcdatamodeld */,
+			);
+			path = "Microsoft-Band";
+			sourceTree = "<group>";
+		};
+		21D8E5F11BEADFBB0079C5AC /* Microsoft-BandTests */ = {
+			isa = PBXGroup;
+			children = (
+				21D8E5F21BEADFBB0079C5AC /* Microsoft_BandTests.swift */,
+				21D8E5F41BEADFBB0079C5AC /* Info.plist */,
+			);
+			path = "Microsoft-BandTests";
+			sourceTree = "<group>";
+		};
+		21D8E5FC1BEADFBB0079C5AC /* Microsoft-BandUITests */ = {
+			isa = PBXGroup;
+			children = (
+				21D8E5FD1BEADFBB0079C5AC /* Microsoft_BandUITests.swift */,
+				21D8E5FF1BEADFBB0079C5AC /* Info.plist */,
+			);
+			path = "Microsoft-BandUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21D8E5D61BEADFBB0079C5AC /* Microsoft-Band */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D8E6021BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-Band" */;
+			buildPhases = (
+				21D8E5D31BEADFBB0079C5AC /* Sources */,
+				21D8E5D41BEADFBB0079C5AC /* Frameworks */,
+				21D8E5D51BEADFBB0079C5AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Microsoft-Band";
+			productName = "Microsoft-Band";
+			productReference = 21D8E5D71BEADFBB0079C5AC /* Microsoft-Band.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21D8E5ED1BEADFBB0079C5AC /* Microsoft-BandTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D8E6051BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-BandTests" */;
+			buildPhases = (
+				21D8E5EA1BEADFBB0079C5AC /* Sources */,
+				21D8E5EB1BEADFBB0079C5AC /* Frameworks */,
+				21D8E5EC1BEADFBB0079C5AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21D8E5F01BEADFBB0079C5AC /* PBXTargetDependency */,
+			);
+			name = "Microsoft-BandTests";
+			productName = "Microsoft-BandTests";
+			productReference = 21D8E5EE1BEADFBB0079C5AC /* Microsoft-BandTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		21D8E5F81BEADFBB0079C5AC /* Microsoft-BandUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21D8E6081BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-BandUITests" */;
+			buildPhases = (
+				21D8E5F51BEADFBB0079C5AC /* Sources */,
+				21D8E5F61BEADFBB0079C5AC /* Frameworks */,
+				21D8E5F71BEADFBB0079C5AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21D8E5FB1BEADFBB0079C5AC /* PBXTargetDependency */,
+			);
+			name = "Microsoft-BandUITests";
+			productName = "Microsoft-BandUITests";
+			productReference = 21D8E5F91BEADFBB0079C5AC /* Microsoft-BandUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21D8E5CF1BEADFBB0079C5AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Bitwise Samurai";
+				TargetAttributes = {
+					21D8E5D61BEADFBB0079C5AC = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					21D8E5ED1BEADFBB0079C5AC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 21D8E5D61BEADFBB0079C5AC;
+					};
+					21D8E5F81BEADFBB0079C5AC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 21D8E5D61BEADFBB0079C5AC;
+					};
+				};
+			};
+			buildConfigurationList = 21D8E5D21BEADFBB0079C5AC /* Build configuration list for PBXProject "Microsoft-Band" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21D8E5CE1BEADFBB0079C5AC;
+			productRefGroup = 21D8E5D81BEADFBB0079C5AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21D8E5D61BEADFBB0079C5AC /* Microsoft-Band */,
+				21D8E5ED1BEADFBB0079C5AC /* Microsoft-BandTests */,
+				21D8E5F81BEADFBB0079C5AC /* Microsoft-BandUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21D8E5D51BEADFBB0079C5AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D8E5E81BEADFBB0079C5AC /* LaunchScreen.storyboard in Resources */,
+				21D8E5E51BEADFBB0079C5AC /* Assets.xcassets in Resources */,
+				21D8E5E01BEADFBB0079C5AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D8E5EC1BEADFBB0079C5AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D8E5F71BEADFBB0079C5AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21D8E5D31BEADFBB0079C5AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D8E5E31BEADFBB0079C5AC /* Microsoft_Band.xcdatamodeld in Sources */,
+				21D8E5DD1BEADFBB0079C5AC /* ViewController.swift in Sources */,
+				21D8E5DB1BEADFBB0079C5AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D8E5EA1BEADFBB0079C5AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D8E5F31BEADFBB0079C5AC /* Microsoft_BandTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21D8E5F51BEADFBB0079C5AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21D8E5FE1BEADFBB0079C5AC /* Microsoft_BandUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21D8E5F01BEADFBB0079C5AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D8E5D61BEADFBB0079C5AC /* Microsoft-Band */;
+			targetProxy = 21D8E5EF1BEADFBB0079C5AC /* PBXContainerItemProxy */;
+		};
+		21D8E5FB1BEADFBB0079C5AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21D8E5D61BEADFBB0079C5AC /* Microsoft-Band */;
+			targetProxy = 21D8E5FA1BEADFBB0079C5AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21D8E5DE1BEADFBB0079C5AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D8E5DF1BEADFBB0079C5AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		21D8E5E61BEADFBB0079C5AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21D8E5E71BEADFBB0079C5AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21D8E6001BEADFBB0079C5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		21D8E6011BEADFBB0079C5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21D8E6031BEADFBB0079C5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Microsoft-Band/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-Band";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		21D8E6041BEADFBB0079C5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Microsoft-Band/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-Band";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		21D8E6061BEADFBB0079C5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Microsoft-BandTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-BandTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Microsoft-Band.app/Microsoft-Band";
+			};
+			name = Debug;
+		};
+		21D8E6071BEADFBB0079C5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Microsoft-BandTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-BandTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Microsoft-Band.app/Microsoft-Band";
+			};
+			name = Release;
+		};
+		21D8E6091BEADFBB0079C5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Microsoft-BandUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-BandUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Microsoft-Band";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		21D8E60A1BEADFBB0079C5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Microsoft-BandUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-BandUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Microsoft-Band";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21D8E5D21BEADFBB0079C5AC /* Build configuration list for PBXProject "Microsoft-Band" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D8E6001BEADFBB0079C5AC /* Debug */,
+				21D8E6011BEADFBB0079C5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21D8E6021BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-Band" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D8E6031BEADFBB0079C5AC /* Debug */,
+				21D8E6041BEADFBB0079C5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21D8E6051BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-BandTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D8E6061BEADFBB0079C5AC /* Debug */,
+				21D8E6071BEADFBB0079C5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21D8E6081BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-BandUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21D8E6091BEADFBB0079C5AC /* Debug */,
+				21D8E60A1BEADFBB0079C5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		21D8E5E11BEADFBB0079C5AC /* Microsoft_Band.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				21D8E5E21BEADFBB0079C5AC /* Microsoft_Band.xcdatamodel */,
+			);
+			currentVersion = 21D8E5E21BEADFBB0079C5AC /* Microsoft_Band.xcdatamodel */;
+			path = Microsoft_Band.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 21D8E5CF1BEADFBB0079C5AC /* Project object */;
+}
