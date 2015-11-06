@@ -15,6 +15,8 @@
 		21D8E5E81BEADFBB0079C5AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D8E5E61BEADFBB0079C5AC /* LaunchScreen.storyboard */; };
 		21D8E5F31BEADFBB0079C5AC /* Microsoft_BandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5F21BEADFBB0079C5AC /* Microsoft_BandTests.swift */; };
 		21D8E5FE1BEADFBB0079C5AC /* Microsoft_BandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D8E5FD1BEADFBB0079C5AC /* Microsoft_BandUITests.swift */; };
+		21D8E60C1BEBCBE60079C5AC /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D8E60B1BEBCBE60079C5AC /* MicrosoftBandKit_iOS.framework */; };
+		21D8E60E1BEBCC110079C5AC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D8E60D1BEBCC110079C5AC /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		21D8E5F91BEADFBB0079C5AC /* Microsoft-BandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Microsoft-BandUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D8E5FD1BEADFBB0079C5AC /* Microsoft_BandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Microsoft_BandUITests.swift; sourceTree = "<group>"; };
 		21D8E5FF1BEADFBB0079C5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D8E60B1BEBCBE60079C5AC /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
+		21D8E60D1BEBCC110079C5AC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		21D8E60F1BEC075C0079C5AC /* Microsoft-Band-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Microsoft-Band-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D8E60E1BEBCC110079C5AC /* CoreBluetooth.framework in Frameworks */,
+				21D8E60C1BEBCBE60079C5AC /* MicrosoftBandKit_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,7 @@
 		21D8E5CE1BEADFBB0079C5AC = {
 			isa = PBXGroup;
 			children = (
+				21D8E6101BEC08260079C5AC /* Frameworks */,
 				21D8E5D91BEADFBB0079C5AC /* Microsoft-Band */,
 				21D8E5F11BEADFBB0079C5AC /* Microsoft-BandTests */,
 				21D8E5FC1BEADFBB0079C5AC /* Microsoft-BandUITests */,
@@ -106,6 +114,7 @@
 				21D8E5E61BEADFBB0079C5AC /* LaunchScreen.storyboard */,
 				21D8E5E91BEADFBB0079C5AC /* Info.plist */,
 				21D8E5E11BEADFBB0079C5AC /* Microsoft_Band.xcdatamodeld */,
+				21D8E60F1BEC075C0079C5AC /* Microsoft-Band-Bridging-Header.h */,
 			);
 			path = "Microsoft-Band";
 			sourceTree = "<group>";
@@ -126,6 +135,15 @@
 				21D8E5FF1BEADFBB0079C5AC /* Info.plist */,
 			);
 			path = "Microsoft-BandUITests";
+			sourceTree = "<group>";
+		};
+		21D8E6101BEC08260079C5AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21D8E60D1BEBCC110079C5AC /* CoreBluetooth.framework */,
+				21D8E60B1BEBCBE60079C5AC /* MicrosoftBandKit_iOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,10 +421,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Microsoft-Band/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Microsoft-Band/Microsoft-Band-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -414,10 +437,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Microsoft-Band/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bitwisesamurai.Microsoft-Band";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Microsoft-Band/Microsoft-Band-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -488,6 +516,7 @@
 				21D8E6041BEADFBB0079C5AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21D8E6051BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-BandTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +525,7 @@
 				21D8E6071BEADFBB0079C5AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21D8E6081BEADFBB0079C5AC /* Build configuration list for PBXNativeTarget "Microsoft-BandUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +534,7 @@
 				21D8E60A1BEADFBB0079C5AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
