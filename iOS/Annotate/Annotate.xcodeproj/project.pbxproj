@@ -14,6 +14,7 @@
 		2165E9221BED46BB0066F6ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2165E9201BED46BB0066F6ED /* LaunchScreen.storyboard */; };
 		2165E92D1BED46BB0066F6ED /* AnnotateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E92C1BED46BB0066F6ED /* AnnotateTests.swift */; };
 		2165E9381BED46BB0066F6ED /* AnnotateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E9371BED46BB0066F6ED /* AnnotateUITests.swift */; };
+		2165E9461BED4A010066F6ED /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2165E9451BED4A010066F6ED /* MediaPlayer.framework */; };
 		2165E94D1BED4BDF0066F6ED /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		2165E9331BED46BB0066F6ED /* AnnotateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnnotateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2165E9371BED46BB0066F6ED /* AnnotateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotateUITests.swift; sourceTree = "<group>"; };
 		2165E9391BED46BB0066F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2165E9451BED4A010066F6ED /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2165E9461BED4A010066F6ED /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		2165E9081BED46BB0066F6ED = {
 			isa = PBXGroup;
 			children = (
+				2165E9451BED4A010066F6ED /* MediaPlayer.framework */,
 				2165E9131BED46BB0066F6ED /* Annotate */,
 				2165E92B1BED46BB0066F6ED /* AnnotateTests */,
 				2165E9361BED46BB0066F6ED /* AnnotateUITests */,
