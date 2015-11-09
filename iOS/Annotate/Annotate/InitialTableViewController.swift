@@ -8,7 +8,11 @@
 
 import UIKit
 
-class InitialTableViewController: UITableViewController {
+import MediaPlayer
+
+class InitialTableViewController: UITableViewController, MPMediaPickerControllerDelegate {
+
+    let mediaPickerController = MPMediaPickerController(mediaTypes: [ .AudioBook, .AudioITunesU, .Podcast ])
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +98,21 @@ class InitialTableViewController: UITableViewController {
 
     // MARK: - Actions
     @IBAction func addMediaItem(sender: AnyObject) {
-        
+        //let mediaPickerController = MPMediaPickerController(mediaTypes: [ .AudioBook, .AudioITunesU, .Podcast ])
+
+        mediaPickerController.delegate = self
+        mediaPickerController.prompt = "Select audio"
+
+        presentViewController(mediaPickerController, animated: true, completion: nil)
+    }
+
+    // MARK: - MPMediaPickerControllerDelegate
+    func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        // TODO
+    }
+
+    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
+        mediaPickerController.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
