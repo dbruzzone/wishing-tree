@@ -35,7 +35,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="apk-5d-MYJ">
                             <connections>
                                 <action selector="addMediaItem:" destination="lPr-Ha-ILt" id="T9x-rd-2tB"/>
-                                <segue destination="pWb-Da-LnL" kind="show" id="5Eo-vh-oMn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
