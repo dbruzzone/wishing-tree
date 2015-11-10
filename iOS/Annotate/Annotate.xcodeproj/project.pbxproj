@@ -17,6 +17,10 @@
 		2165E9461BED4A010066F6ED /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2165E9451BED4A010066F6ED /* MediaPlayer.framework */; };
 		2165E94D1BED4BDF0066F6ED /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */; };
 		2165E94F1BF001BC0066F6ED /* MediaItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E94E1BF001BC0066F6ED /* MediaItemViewController.swift */; };
+		21C012281BF25D29006467B0 /* MediaItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012241BF25D29006467B0 /* MediaItem+CoreDataProperties.swift */; };
+		21C012291BF25D29006467B0 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012251BF25D29006467B0 /* MediaItem.swift */; };
+		21C0122A1BF25D29006467B0 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012261BF25D29006467B0 /* Note+CoreDataProperties.swift */; };
+		21C0122B1BF25D29006467B0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012271BF25D29006467B0 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		2165E9451BED4A010066F6ED /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 		2165E94E1BF001BC0066F6ED /* MediaItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemViewController.swift; sourceTree = "<group>"; };
+		21C012241BF25D29006467B0 /* MediaItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MediaItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		21C012251BF25D29006467B0 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
+		21C012261BF25D29006467B0 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		21C012271BF25D29006467B0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 		2165E9081BED46BB0066F6ED = {
 			isa = PBXGroup;
 			children = (
+				21C0122C1BF25D43006467B0 /* Entities */,
 				2165E9451BED4A010066F6ED /* MediaPlayer.framework */,
 				2165E9131BED46BB0066F6ED /* Annotate */,
 				2165E92B1BED46BB0066F6ED /* AnnotateTests */,
@@ -141,6 +150,17 @@
 				2165E94E1BF001BC0066F6ED /* MediaItemViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		21C0122C1BF25D43006467B0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				21C012241BF25D29006467B0 /* MediaItem+CoreDataProperties.swift */,
+				21C012251BF25D29006467B0 /* MediaItem.swift */,
+				21C012261BF25D29006467B0 /* Note+CoreDataProperties.swift */,
+				21C012271BF25D29006467B0 /* Note.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C012281BF25D29006467B0 /* MediaItem+CoreDataProperties.swift in Sources */,
+				21C0122A1BF25D29006467B0 /* Note+CoreDataProperties.swift in Sources */,
 				2165E91D1BED46BB0066F6ED /* Annotate.xcdatamodeld in Sources */,
+				21C0122B1BF25D29006467B0 /* Note.swift in Sources */,
 				2165E94D1BED4BDF0066F6ED /* InitialTableViewController.swift in Sources */,
 				2165E94F1BF001BC0066F6ED /* MediaItemViewController.swift in Sources */,
 				2165E9151BED46BB0066F6ED /* AppDelegate.swift in Sources */,
+				21C012291BF25D29006467B0 /* MediaItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +526,7 @@
 				2165E93E1BED46BB0066F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2165E93F1BED46BB0066F6ED /* Build configuration list for PBXNativeTarget "AnnotateTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +535,7 @@
 				2165E9411BED46BB0066F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2165E9421BED46BB0066F6ED /* Build configuration list for PBXNativeTarget "AnnotateUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +544,7 @@
 				2165E9441BED46BB0066F6ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
