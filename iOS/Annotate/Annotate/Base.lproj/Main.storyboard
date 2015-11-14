@@ -79,6 +79,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-j1-Cfa">
                                 <rect key="frame" x="20" y="72" width="560" height="20.5"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="V9Z-bk-s2C"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -86,6 +89,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uH3-Lv-o7Q">
                                 <rect key="frame" x="20" y="100" width="560" height="20.5"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="jVy-oW-pJU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,7 +109,7 @@
                                         <state key="normal" title="Back"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOn-hU-tN7">
-                                        <rect key="frame" x="264" y="30" width="32" height="21"/>
+                                        <rect key="frame" x="264" y="30.5" width="32" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -139,22 +145,22 @@
                             <constraint firstAttribute="trailingMargin" secondItem="IDu-lx-onj" secondAttribute="trailing" constant="-20" id="3pc-mj-5hK"/>
                             <constraint firstItem="ruW-mg-q2p" firstAttribute="top" secondItem="4Us-yh-y0C" secondAttribute="bottom" constant="7.5" id="4Ip-af-UMK"/>
                             <constraint firstItem="7y8-vM-XKx" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="6eK-Ak-pN5"/>
+                            <constraint firstItem="7VB-j1-Cfa" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="Bln-1i-Kev"/>
                             <constraint firstItem="4Us-yh-y0C" firstAttribute="top" secondItem="7y8-vM-XKx" secondAttribute="bottom" constant="7.5" id="DMH-yI-1T8"/>
-                            <constraint firstItem="7VB-j1-Cfa" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="GRM-tS-ZoB"/>
                             <constraint firstItem="ruW-mg-q2p" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="GfJ-rZ-wVT"/>
-                            <constraint firstItem="7VB-j1-Cfa" firstAttribute="top" secondItem="UZ2-cd-vCg" secondAttribute="bottom" constant="8" id="HXe-sz-SuN"/>
-                            <constraint firstItem="uH3-Lv-o7Q" firstAttribute="top" secondItem="7VB-j1-Cfa" secondAttribute="bottom" constant="7.5" id="JRc-xJ-krj"/>
+                            <constraint firstItem="uH3-Lv-o7Q" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="Mtg-re-6bV"/>
                             <constraint firstItem="4Us-yh-y0C" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="N94-ak-J81"/>
                             <constraint firstItem="7y8-vM-XKx" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="P9h-qf-JzM"/>
-                            <constraint firstItem="7VB-j1-Cfa" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="Uy2-3x-yfP"/>
                             <constraint firstItem="7y8-vM-XKx" firstAttribute="top" secondItem="uH3-Lv-o7Q" secondAttribute="bottom" constant="8" id="YzZ-ZE-MN7"/>
                             <constraint firstItem="ruW-mg-q2p" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="av5-Sc-Kxk"/>
-                            <constraint firstItem="uH3-Lv-o7Q" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="civ-9l-Gs4"/>
+                            <constraint firstItem="7VB-j1-Cfa" firstAttribute="top" secondItem="UZ2-cd-vCg" secondAttribute="bottom" constant="8" id="d8M-DV-VsC"/>
                             <constraint firstItem="IDu-lx-onj" firstAttribute="top" secondItem="ruW-mg-q2p" secondAttribute="bottom" constant="8" id="dSg-JE-tQ7"/>
+                            <constraint firstItem="7VB-j1-Cfa" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="gZ8-8A-bhh"/>
                             <constraint firstItem="4Us-yh-y0C" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="gea-Sw-J77"/>
+                            <constraint firstItem="uH3-Lv-o7Q" firstAttribute="trailing" secondItem="2Rm-Oy-e10" secondAttribute="trailingMargin" id="lRZ-wV-yEZ"/>
                             <constraint firstItem="bxK-Ve-gvx" firstAttribute="top" secondItem="IDu-lx-onj" secondAttribute="bottom" id="oXl-rE-f3Q"/>
                             <constraint firstItem="IDu-lx-onj" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" constant="-20" id="y09-Zl-vce"/>
-                            <constraint firstItem="uH3-Lv-o7Q" firstAttribute="leading" secondItem="2Rm-Oy-e10" secondAttribute="leadingMargin" id="ypP-sn-WcP"/>
+                            <constraint firstItem="uH3-Lv-o7Q" firstAttribute="top" secondItem="7VB-j1-Cfa" secondAttribute="bottom" constant="7.5" id="zfM-hS-Sz6"/>
                         </constraints>
                     </view>
                 </viewController>
