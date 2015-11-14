@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1704" y="314"/>
         </scene>
-        <!--Media Item View Controller-->
+        <!--Media Item Table View Controller-->
         <scene sceneID="Xc0-dK-O5g">
             <objects>
-                <viewController id="pWb-Da-LnL" customClass="MediaItemViewController" customModule="Annotate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pWb-Da-LnL" customClass="MediaItemTableViewController" customModule="Annotate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UZ2-cd-vCg"/>
                         <viewControllerLayoutGuide type="bottom" id="bxK-Ve-gvx"/>

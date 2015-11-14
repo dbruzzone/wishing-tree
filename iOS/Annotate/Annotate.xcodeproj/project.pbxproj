@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2163C79B1BF7E9F8006514A5 /* MediaItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163C79A1BF7E9F8006514A5 /* MediaItemTableViewController.swift */; };
 		2165E9151BED46BB0066F6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E9141BED46BB0066F6ED /* AppDelegate.swift */; };
 		2165E91A1BED46BB0066F6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2165E9181BED46BB0066F6ED /* Main.storyboard */; };
 		2165E91D1BED46BB0066F6ED /* Annotate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2165E91B1BED46BB0066F6ED /* Annotate.xcdatamodeld */; };
@@ -16,7 +17,6 @@
 		2165E9381BED46BB0066F6ED /* AnnotateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E9371BED46BB0066F6ED /* AnnotateUITests.swift */; };
 		2165E9461BED4A010066F6ED /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2165E9451BED4A010066F6ED /* MediaPlayer.framework */; };
 		2165E94D1BED4BDF0066F6ED /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */; };
-		2165E94F1BF001BC0066F6ED /* MediaItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2165E94E1BF001BC0066F6ED /* MediaItemViewController.swift */; };
 		21C012281BF25D29006467B0 /* MediaItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012241BF25D29006467B0 /* MediaItem+CoreDataProperties.swift */; };
 		21C012291BF25D29006467B0 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012251BF25D29006467B0 /* MediaItem.swift */; };
 		21C0122A1BF25D29006467B0 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C012261BF25D29006467B0 /* Note+CoreDataProperties.swift */; };
@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2163C79A1BF7E9F8006514A5 /* MediaItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemTableViewController.swift; sourceTree = "<group>"; };
 		2165E9111BED46BB0066F6ED /* Annotate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Annotate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2165E9141BED46BB0066F6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2165E9191BED46BB0066F6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		2165E9391BED46BB0066F6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2165E9451BED4A010066F6ED /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
-		2165E94E1BF001BC0066F6ED /* MediaItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemViewController.swift; sourceTree = "<group>"; };
 		21C012241BF25D29006467B0 /* MediaItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MediaItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		21C012251BF25D29006467B0 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
 		21C012261BF25D29006467B0 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2165E94C1BED4BDF0066F6ED /* InitialTableViewController.swift */,
-				2165E94E1BF001BC0066F6ED /* MediaItemViewController.swift */,
+				2163C79A1BF7E9F8006514A5 /* MediaItemTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -297,9 +297,9 @@
 				21C012281BF25D29006467B0 /* MediaItem+CoreDataProperties.swift in Sources */,
 				21C0122A1BF25D29006467B0 /* Note+CoreDataProperties.swift in Sources */,
 				2165E91D1BED46BB0066F6ED /* Annotate.xcdatamodeld in Sources */,
+				2163C79B1BF7E9F8006514A5 /* MediaItemTableViewController.swift in Sources */,
 				21C0122B1BF25D29006467B0 /* Note.swift in Sources */,
 				2165E94D1BED4BDF0066F6ED /* InitialTableViewController.swift in Sources */,
-				2165E94F1BF001BC0066F6ED /* MediaItemViewController.swift in Sources */,
 				2165E9151BED46BB0066F6ED /* AppDelegate.swift in Sources */,
 				21C012291BF25D29006467B0 /* MediaItem.swift in Sources */,
 			);
