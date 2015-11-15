@@ -75,6 +75,10 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pWb-Da-LnL" id="Cvz-qp-14K"/>
+                                    <outlet property="delegate" destination="pWb-Da-LnL" id="MDQ-ir-s0E"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-j1-Cfa">
                                 <rect key="frame" x="20" y="72" width="560" height="20.5"/>
@@ -107,6 +111,9 @@
                                         <rect key="frame" x="0.0" y="25" width="34" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="back:" destination="pWb-Da-LnL" eventType="touchUpInside" id="wcH-gl-ly0"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOn-hU-tN7">
                                         <rect key="frame" x="264" y="30.5" width="32" height="20.5"/>
@@ -119,6 +126,9 @@
                                         <rect key="frame" x="504" y="25" width="56" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Forward"/>
+                                        <connections>
+                                            <action selector="forward:" destination="pWb-Da-LnL" eventType="touchUpInside" id="G9U-bC-5tS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -137,6 +147,9 @@
                                 <rect key="frame" x="20" y="254" width="560" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Note"/>
+                                <connections>
+                                    <action selector="note:" destination="pWb-Da-LnL" eventType="touchUpInside" id="dby-0S-Iy6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -163,6 +176,13 @@
                             <constraint firstItem="uH3-Lv-o7Q" firstAttribute="top" secondItem="7VB-j1-Cfa" secondAttribute="bottom" constant="7.5" id="zfM-hS-Sz6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentPosition" destination="7y8-vM-XKx" id="Uao-1P-c4T"/>
+                        <outlet property="mediaItemArtist" destination="uH3-Lv-o7Q" id="4gW-dI-gxD"/>
+                        <outlet property="mediaItemTitle" destination="7VB-j1-Cfa" id="Awi-EM-uMo"/>
+                        <outlet property="ribbonControllerLabel" destination="DOn-hU-tN7" id="28Y-DF-pju"/>
+                        <outlet property="title" destination="7VB-j1-Cfa" id="Ibc-2X-z25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0f-Zs-egK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

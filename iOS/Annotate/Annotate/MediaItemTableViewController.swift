@@ -10,6 +10,14 @@ import UIKit
 
 class MediaItemTableViewController: UITableViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var mediaItemTitle: UILabel!
+    @IBOutlet weak var mediaItemArtist: UILabel!
+
+    @IBOutlet weak var currentPosition: UISlider!
+
+    @IBOutlet weak var ribbonControllerLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,5 +99,18 @@ class MediaItemTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    // MARK: - Actions
+    @IBAction func back(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func forward(sender: AnyObject) {
+        
+    }
+
+    @IBAction func note(sender: AnyObject) {
+        
+    }
 
 }
