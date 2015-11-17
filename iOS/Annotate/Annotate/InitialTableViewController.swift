@@ -8,11 +8,15 @@
 
 import UIKit
 
+import CoreData
+
 import MediaPlayer
 
 class InitialTableViewController: UITableViewController, MPMediaPickerControllerDelegate {
 
-    let mediaPickerController = MPMediaPickerController(mediaTypes: [ .AudioBook, .AudioITunesU, .Podcast ])
+    var mediaItems = [MediaItem]()
+
+    var mediaPickerController: MPMediaPickerController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,22 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(animated: Bool) { super.viewWillAppear(animated)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+        let managedContext = appDelegate.managedObjectContext
+
+        let fetchRequest = NSFetchRequest(entityName: "MediaItem")
+
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+
+            mediaItems = results as! [MediaItem]
+        } catch let error as NSError {
+            print("Could not fetch the app's media items: \(error), \(error.userInfo)")
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,24 +52,21 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return mediaItems.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        cell.textLabel!.text = mediaItems[indexPath.row].title
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,22 +114,60 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
     */
 
     // MARK: - Actions
+
     @IBAction func addMediaItem(sender: AnyObject) {
-        //let mediaPickerController = MPMediaPickerController(mediaTypes: [ .AudioBook, .AudioITunesU, .Podcast ])
+        // TODO: Filter the media types that mediaPickerController displays. This used
+        //       to work but nothing shows up now unless the filter is broadened to
+        //       something like .AnyAudio
+        mediaPickerController = MPMediaPickerController(mediaTypes: .AnyAudio)
 
-        mediaPickerController.delegate = self
-        mediaPickerController.prompt = "Select audio"
+        if let picker = mediaPickerController {
+            picker.delegate = self
+            picker.allowsPickingMultipleItems = true
 
-        presentViewController(mediaPickerController, animated: true, completion: nil)
+            presentViewController(picker, animated: true, completion: nil)
+        } else {
+            // TODO
+            print("Could not instantiate a media picker")
+        }
     }
 
     // MARK: - MPMediaPickerControllerDelegate
+
     func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
-        // TODO
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+        let managedContext = appDelegate.managedObjectContext
+
+        let entity = NSEntityDescription.entityForName("MediaItem", inManagedObjectContext:managedContext)
+    
+        for selectedMediaItem in mediaItemCollection.items as [MPMediaItem] {
+            let mediaItem = MediaItem(entity: entity!, insertIntoManagedObjectContext: managedContext)
+
+            let itemUrl = selectedMediaItem.valueForProperty(MPMediaItemPropertyAssetURL) as? NSURL
+            let itemTitle = selectedMediaItem.valueForProperty(MPMediaItemPropertyTitle) as? String
+            let itemArtist = selectedMediaItem.valueForProperty(MPMediaItemPropertyArtist) as? String
+
+            mediaItem.url = itemUrl?.absoluteString
+            mediaItem.title = itemTitle
+            mediaItem.artist = itemArtist
+
+            mediaItems.append(mediaItem)
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save the selected media item: \(error), \(error.userInfo)")
+        }
+
+        self.tableView.reloadData()
+
+        mediaPicker.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
-        mediaPickerController.dismissViewControllerAnimated(true, completion: nil)
+        mediaPickerController!.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
