@@ -24,3 +24,11 @@ sudo apt-get update
 
 # Install MongoDB
 sudo apt-get install -y mongodb-org
+
+# Allow any host to connect to MongoDB
+#
+# WARNING: Never do this on a production server!
+sudo sed -i 's/.*bindIp: 127.0.0.1.*/  bindIp: 0.0.0.0/' /etc/mongod.conf
+
+# Restart MongoDB
+sudo service mongod restart
