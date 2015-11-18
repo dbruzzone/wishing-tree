@@ -14,6 +14,10 @@ import MediaPlayer
 
 class InitialTableViewController: UITableViewController, MPMediaPickerControllerDelegate {
 
+    var appDelegate: AppDelegate?
+
+    var managedContext: NSManagedObjectContext?
+
     var mediaItems = [MediaItem]()
 
     var mediaPickerController: MPMediaPickerController?
@@ -26,17 +30,17 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
+        appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        managedContext = appDelegate!.managedObjectContext
     }
 
     override func viewWillAppear(animated: Bool) { super.viewWillAppear(animated)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-        let managedContext = appDelegate.managedObjectContext
-
         let fetchRequest = NSFetchRequest(entityName: "MediaItem")
 
         do {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
+            let results = try managedContext!.executeFetchRequest(fetchRequest)
 
             mediaItems = results as! [MediaItem]
         } catch let error as NSError {
@@ -76,17 +80,23 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+            let mediaItem = mediaItems.removeAtIndex(indexPath.row)
+
+            managedContext!.deleteObject(mediaItem)
+
+            if mediaItem.deleted {
+                saveContext("Could not delete the selected media item")
+            }
+
+            // Delete the row
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -135,11 +145,7 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
     // MARK: - MPMediaPickerControllerDelegate
 
     func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-        let managedContext = appDelegate.managedObjectContext
-
-        let entity = NSEntityDescription.entityForName("MediaItem", inManagedObjectContext:managedContext)
+        let entity = NSEntityDescription.entityForName("MediaItem", inManagedObjectContext: managedContext!)
     
         for selectedMediaItem in mediaItemCollection.items as [MPMediaItem] {
             let mediaItem = MediaItem(entity: entity!, insertIntoManagedObjectContext: managedContext)
@@ -155,11 +161,7 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
             mediaItems.append(mediaItem)
         }
 
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save the selected media item: \(error), \(error.userInfo)")
-        }
+        saveContext("Could not save the selected media item")
 
         self.tableView.reloadData()
 
@@ -168,6 +170,15 @@ class InitialTableViewController: UITableViewController, MPMediaPickerController
 
     func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
         mediaPickerController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // MARK: - Private methods
+    private func saveContext(message: String) {
+        do {
+            try managedContext!.save()
+        } catch let error as NSError {
+            print("\(message): \(error), \(error.userInfo)")
+        }
     }
 
 }
