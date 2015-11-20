@@ -26,7 +26,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="pWb-Da-LnL" kind="show" id="AuE-A5-oI9"/>
+                                    <segue destination="pWb-Da-LnL" kind="show" identifier="showMediaItem" id="cBA-2H-S9q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

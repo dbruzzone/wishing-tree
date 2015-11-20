@@ -10,6 +10,8 @@ import UIKit
 
 class MediaItemTableViewController: UITableViewController {
 
+    var mediaItem: MediaItem?
+
     // MARK: - Outlets
     @IBOutlet weak var mediaItemTitle: UILabel!
     @IBOutlet weak var mediaItemArtist: UILabel!
