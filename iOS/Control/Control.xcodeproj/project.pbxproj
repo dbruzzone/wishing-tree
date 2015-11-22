@@ -15,6 +15,7 @@
 		2102247A1BFE6A4300EC710E /* ControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224791BFE6A4300EC710E /* ControlTests.swift */; };
 		210224851BFE6A4400EC710E /* ControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224841BFE6A4400EC710E /* ControlUITests.swift */; };
 		2102249C1C01296100EC710E /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249B1C01296100EC710E /* InitialTableViewController.swift */; };
+		2102249E1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		210224841BFE6A4400EC710E /* ControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlUITests.swift; sourceTree = "<group>"; };
 		210224861BFE6A4400EC710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2102249B1C01296100EC710E /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
+		2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPeripheralDevicesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				2102249B1C01296100EC710E /* InitialTableViewController.swift */,
+				2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				2102249C1C01296100EC710E /* InitialTableViewController.swift in Sources */,
 				2102246A1BFE6A4300EC710E /* Control.xcdatamodeld in Sources */,
+				2102249E1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift in Sources */,
 				210224621BFE6A4300EC710E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
