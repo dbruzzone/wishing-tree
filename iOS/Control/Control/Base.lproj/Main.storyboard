@@ -31,7 +31,13 @@
                             <outlet property="delegate" destination="AzJ-Dw-zHT" id="Dwd-3k-fY7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7hX-wi-KwK"/>
+                    <navigationItem key="navigationItem" id="7hX-wi-KwK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="fAq-HP-g2p">
+                            <connections>
+                                <segue destination="tuZ-Ka-J97" kind="presentation" id="u1P-wR-gNK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmb-1n-5B7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +54,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gKU-bf-qWk">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gKU-bf-qWk" id="tyU-nz-yFh">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -63,10 +69,17 @@
                             <outlet property="delegate" destination="Nj2-UA-6cD" id="Nkj-1f-fUy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="WNG-9U-jRL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SX1-aF-iy4">
+                            <connections>
+                                <action selector="cancel:" destination="Nj2-UA-6cD" id="62e-Cb-7Wj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pZ-vu-tmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="1756"/>
+            <point key="canvasLocation" x="1823" y="1762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AqO-6A-YzU">
@@ -86,6 +99,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIo-ln-H4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="291" y="1039"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kSO-vR-88R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tuZ-Ka-J97" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ZG-jq-8gb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nj2-UA-6cD" kind="relationship" relationship="rootViewController" id="yE9-DN-eDc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbP-Dd-q3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="1762"/>
         </scene>
     </scenes>
 </document>

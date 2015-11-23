@@ -17,7 +17,6 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,5 +90,11 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    // MARK: - Actions
+
+    @IBAction func cancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
