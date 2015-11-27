@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		210224B11C0748A900EC710E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224B01C0748A900EC710E /* AppDelegate.swift */; };
-		210224B31C0748A900EC710E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224B21C0748A900EC710E /* ViewController.swift */; };
 		210224B61C0748A900EC710E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210224B41C0748A900EC710E /* Main.storyboard */; };
 		210224B91C0748A900EC710E /* Display.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 210224B71C0748A900EC710E /* Display.xcdatamodeld */; };
 		210224BB1C0748A900EC710E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210224BA1C0748A900EC710E /* Assets.xcassets */; };
 		210224BE1C0748A900EC710E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210224BC1C0748A900EC710E /* LaunchScreen.storyboard */; };
 		210224C91C0748A900EC710E /* DisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224C81C0748A900EC710E /* DisplayTests.swift */; };
 		210224D41C0748A900EC710E /* DisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224D31C0748A900EC710E /* DisplayUITests.swift */; };
+		210224E31C08B87500EC710E /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224E21C08B87500EC710E /* InitialTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		210224AD1C0748A900EC710E /* Display.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Display.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		210224B01C0748A900EC710E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		210224B21C0748A900EC710E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		210224B51C0748A900EC710E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		210224B81C0748A900EC710E /* Display.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Display.xcdatamodel; sourceTree = "<group>"; };
 		210224BA1C0748A900EC710E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		210224CF1C0748A900EC710E /* DisplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		210224D31C0748A900EC710E /* DisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayUITests.swift; sourceTree = "<group>"; };
 		210224D51C0748A900EC710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		210224E21C08B87500EC710E /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 		210224AF1C0748A900EC710E /* Display */ = {
 			isa = PBXGroup;
 			children = (
+				210224E11C08B83300EC710E /* View controllers */,
 				210224B01C0748A900EC710E /* AppDelegate.swift */,
-				210224B21C0748A900EC710E /* ViewController.swift */,
 				210224B41C0748A900EC710E /* Main.storyboard */,
 				210224BA1C0748A900EC710E /* Assets.xcassets */,
 				210224BC1C0748A900EC710E /* LaunchScreen.storyboard */,
@@ -126,6 +126,14 @@
 				210224D51C0748A900EC710E /* Info.plist */,
 			);
 			path = DisplayUITests;
+			sourceTree = "<group>";
+		};
+		210224E11C08B83300EC710E /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				210224E21C08B87500EC710E /* InitialTableViewController.swift */,
+			);
+			name = "View controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210224B31C0748A900EC710E /* ViewController.swift in Sources */,
 				210224B11C0748A900EC710E /* AppDelegate.swift in Sources */,
+				210224E31C08B87500EC710E /* InitialTableViewController.swift in Sources */,
 				210224B91C0748A900EC710E /* Display.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
