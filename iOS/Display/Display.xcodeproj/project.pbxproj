@@ -15,6 +15,7 @@
 		210224C91C0748A900EC710E /* DisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224C81C0748A900EC710E /* DisplayTests.swift */; };
 		210224D41C0748A900EC710E /* DisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224D31C0748A900EC710E /* DisplayUITests.swift */; };
 		210224E31C08B87500EC710E /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224E21C08B87500EC710E /* InitialTableViewController.swift */; };
+		210225231C0C550700EC710E /* LinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210225221C0C550700EC710E /* LinesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		210224D31C0748A900EC710E /* DisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayUITests.swift; sourceTree = "<group>"; };
 		210224D51C0748A900EC710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210224E21C08B87500EC710E /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
+		210225221C0C550700EC710E /* LinesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		210224AF1C0748A900EC710E /* Display */ = {
 			isa = PBXGroup;
 			children = (
+				210225211C0C541C00EC710E /* Views */,
 				210224E11C08B83300EC710E /* View controllers */,
 				210224B01C0748A900EC710E /* AppDelegate.swift */,
 				210224B41C0748A900EC710E /* Main.storyboard */,
@@ -134,6 +137,14 @@
 				210224E21C08B87500EC710E /* InitialTableViewController.swift */,
 			);
 			name = "View controllers";
+			sourceTree = "<group>";
+		};
+		210225211C0C541C00EC710E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				210225221C0C550700EC710E /* LinesView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210225231C0C550700EC710E /* LinesView.swift in Sources */,
 				210224B11C0748A900EC710E /* AppDelegate.swift in Sources */,
 				210224E31C08B87500EC710E /* InitialTableViewController.swift in Sources */,
 				210224B91C0748A900EC710E /* Display.xcdatamodeld in Sources */,
