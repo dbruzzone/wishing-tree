@@ -17,6 +17,7 @@
 		2102249C1C01296100EC710E /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249B1C01296100EC710E /* InitialTableViewController.swift */; };
 		2102249E1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */; };
 		210224A01C0600C500EC710E /* PeripheralServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */; };
+		210224A21C0603CD00EC710E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210224A11C0603CD00EC710E /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		2102249B1C01296100EC710E /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 		2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPeripheralDevicesTableViewController.swift; sourceTree = "<group>"; };
 		2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralServicesTableViewController.swift; sourceTree = "<group>"; };
+		210224A11C0603CD00EC710E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210224A21C0603CD00EC710E /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,7 @@
 		210224601BFE6A4300EC710E /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				210224A31C0603DC00EC710E /* Frameworks */,
 				2102249A1C01294300EC710E /* View Controllers */,
 				210224611BFE6A4300EC710E /* AppDelegate.swift */,
 				210224651BFE6A4300EC710E /* Main.storyboard */,
@@ -140,6 +144,14 @@
 				2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		210224A31C0603DC00EC710E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				210224A11C0603CD00EC710E /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +222,11 @@
 				TargetAttributes = {
 					2102245D1BFE6A4300EC710E = {
 						CreatedOnToolsVersion = 7.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					210224741BFE6A4300EC710E = {
 						CreatedOnToolsVersion = 7.1.1;
