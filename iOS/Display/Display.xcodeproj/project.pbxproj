@@ -16,6 +16,7 @@
 		210224D41C0748A900EC710E /* DisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224D31C0748A900EC710E /* DisplayUITests.swift */; };
 		210224E31C08B87500EC710E /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210224E21C08B87500EC710E /* InitialTableViewController.swift */; };
 		210225231C0C550700EC710E /* LinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210225221C0C550700EC710E /* LinesView.swift */; };
+		210225251C0E19CA00EC710E /* CirclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210225241C0E19CA00EC710E /* CirclesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		210224D51C0748A900EC710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		210224E21C08B87500EC710E /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
 		210225221C0C550700EC710E /* LinesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesView.swift; sourceTree = "<group>"; };
+		210225241C0E19CA00EC710E /* CirclesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				210225221C0C550700EC710E /* LinesView.swift */,
+				210225241C0E19CA00EC710E /* CirclesView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210225251C0E19CA00EC710E /* CirclesView.swift in Sources */,
 				210225231C0C550700EC710E /* LinesView.swift in Sources */,
 				210224B11C0748A900EC710E /* AppDelegate.swift in Sources */,
 				210224E31C08B87500EC710E /* InitialTableViewController.swift in Sources */,

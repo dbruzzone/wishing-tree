@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEs-0r-2Wq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Circles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEs-0r-2Wq">
                                                     <rect key="frame" x="8" y="12" width="32" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -111,24 +111,11 @@
                         <viewControllerLayoutGuide type="top" id="r7R-bR-tkk"/>
                         <viewControllerLayoutGuide type="bottom" id="XSl-bK-pfO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uX5-3t-tZi">
+                    <view key="view" contentMode="scaleToFill" id="uX5-3t-tZi" customClass="CirclesView" customModule="Display" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-o6-KTA">
-                                <rect key="frame" x="284" y="289" width="32" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3K7-o6-KTA" firstAttribute="centerY" secondItem="uX5-3t-tZi" secondAttribute="centerY" id="9SI-NR-3eb"/>
-                            <constraint firstItem="3K7-o6-KTA" firstAttribute="centerX" secondItem="uX5-3t-tZi" secondAttribute="centerX" id="dN4-DE-krX"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suk-zZ-kT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
