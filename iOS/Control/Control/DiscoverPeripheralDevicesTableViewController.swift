@@ -8,17 +8,12 @@
 
 import UIKit
 
-import CoreBluetooth
+class DiscoverPeripheralDevicesTableViewController: UITableViewController, BluetoothManagerProtocol {
 
-class DiscoverPeripheralDevicesTableViewController: UITableViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
-
-    var centralManager: CBCentralManager?
-
-    var peripherals: [CBPeripheral] = []
-
-    var scanning: Bool = false
+    var bluetoothManager: BluetoothManager?
 
     // MARK: - Outlets
+
     @IBOutlet weak var scanBarButtonItem: UIBarButtonItem!
 
     override func viewDidLoad() {
@@ -28,8 +23,11 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, CBCen
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
-        centralManager = CBCentralManager.init(delegate: self, queue: nil, options: nil)
+        bluetoothManager = BluetoothManager.sharedInstance
+
+        bluetoothManager?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,19 +42,20 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, CBCen
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peripherals.count
+        return (bluetoothManager?.peripherals.count)!
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
-        let peripheral = peripherals[indexPath.row]
+        let peripheral = bluetoothManager!.peripherals[indexPath.row]
 
         // Safely unwrap peripheral.name before using it
         if let peripheralName = peripheral.name {
             cell.textLabel?.text = peripheralName
         }
+
         cell.detailTextLabel?.text = peripheral.description
 
         return cell
@@ -114,47 +113,27 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, CBCen
     }
 
     @IBAction func scan(sender: AnyObject) {
-        if (scanning) {
-            centralManager!.stopScan()
-
-            scanBarButtonItem.title = "Scan"
-
-            scanning = false
-        } else {
-            centralManager!.scanForPeripheralsWithServices(nil, options: nil)
-
-            scanBarButtonItem.title = "Stop"
-
-            scanning = true
+        if let manager = bluetoothManager {
+            if (manager.scanning) {
+                manager.stopScanning()
+                
+                scanBarButtonItem.title = "Scan"
+            } else {
+                manager.scan()
+                
+                scanBarButtonItem.title = "Stop"
+            }
         }
     }
 
-    // MARK: - CBCentralManagerDelegate
-    func centralManagerDidUpdateState(central: CBCentralManager) {
-        switch (central.state) {
-            case CBCentralManagerState.PoweredOff:
-                print("The device's Bluetooth hardware is powered off")
-            case CBCentralManagerState.PoweredOn:
-                print("The device's Bluetooth hardware is powered on and ready")
+    // MARK: - BluetoothManagerProtocol
 
-                scanBarButtonItem.enabled = true
-            case CBCentralManagerState.Resetting:
-                print("The Bluetooth hardware is resetting")
-            case CBCentralManagerState.Unauthorized:
-                print("The Bluetooth hardware's state is unauthorized")
-            case CBCentralManagerState.Unknown:
-                print("The Bluetooth hardware's state is unknown")
-            case CBCentralManagerState.Unsupported:
-                print("This device doesn't have Bluetooth hardware")
-        }
+    func hardwareReady() {
+        scanBarButtonItem.enabled = true
     }
 
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        if !peripherals.contains(peripheral) {
-            peripherals.append(peripheral)
-            
-            self.tableView.reloadData()
-        }
+    func peripheralAdded() {
+        self.tableView.reloadData()
     }
 
 }

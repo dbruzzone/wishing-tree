@@ -18,6 +18,7 @@
 		2102249E1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */; };
 		210224A01C0600C500EC710E /* PeripheralServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */; };
 		210224A21C0603CD00EC710E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210224A11C0603CD00EC710E /* CoreBluetooth.framework */; };
+		2163D7901C122892003E20B1 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163D78F1C122892003E20B1 /* BluetoothManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverPeripheralDevicesTableViewController.swift; sourceTree = "<group>"; };
 		2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralServicesTableViewController.swift; sourceTree = "<group>"; };
 		210224A11C0603CD00EC710E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		2163D78F1C122892003E20B1 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				2102246D1BFE6A4300EC710E /* LaunchScreen.storyboard */,
 				210224701BFE6A4300EC710E /* Info.plist */,
 				210224681BFE6A4300EC710E /* Control.xcdatamodeld */,
+				2163D78F1C122892003E20B1 /* BluetoothManager.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				210224A01C0600C500EC710E /* PeripheralServicesTableViewController.swift in Sources */,
 				2102246A1BFE6A4300EC710E /* Control.xcdatamodeld in Sources */,
 				2102249E1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift in Sources */,
+				2163D7901C122892003E20B1 /* BluetoothManager.swift in Sources */,
 				210224621BFE6A4300EC710E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +523,7 @@
 				2102248B1BFE6A4400EC710E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2102248C1BFE6A4400EC710E /* Build configuration list for PBXNativeTarget "ControlTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +532,7 @@
 				2102248E1BFE6A4400EC710E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2102248F1BFE6A4400EC710E /* Build configuration list for PBXNativeTarget "ControlUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +541,7 @@
 				210224911BFE6A4400EC710E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
