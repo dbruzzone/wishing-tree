@@ -19,6 +19,7 @@
 		210224A01C0600C500EC710E /* PeripheralServicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */; };
 		210224A21C0603CD00EC710E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210224A11C0603CD00EC710E /* CoreBluetooth.framework */; };
 		2163D7901C122892003E20B1 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163D78F1C122892003E20B1 /* BluetoothManager.swift */; };
+		2163D7941C14D634003E20B1 /* ServiceCharacteristicsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163D7931C14D634003E20B1 /* ServiceCharacteristicsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeripheralServicesTableViewController.swift; sourceTree = "<group>"; };
 		210224A11C0603CD00EC710E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		2163D78F1C122892003E20B1 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		2163D7931C14D634003E20B1 /* ServiceCharacteristicsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCharacteristicsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				2102249B1C01296100EC710E /* InitialTableViewController.swift */,
 				2102249D1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift */,
 				2102249F1C0600C500EC710E /* PeripheralServicesTableViewController.swift */,
+				2163D7931C14D634003E20B1 /* ServiceCharacteristicsTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				210224A01C0600C500EC710E /* PeripheralServicesTableViewController.swift in Sources */,
 				2102246A1BFE6A4300EC710E /* Control.xcdatamodeld in Sources */,
 				2102249E1C01D2FE00EC710E /* DiscoverPeripheralDevicesTableViewController.swift in Sources */,
+				2163D7941C14D634003E20B1 /* ServiceCharacteristicsTableViewController.swift in Sources */,
 				2163D7901C122892003E20B1 /* BluetoothManager.swift in Sources */,
 				210224621BFE6A4300EC710E /* AppDelegate.swift in Sources */,
 			);
