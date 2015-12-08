@@ -8,7 +8,11 @@
 
 import UIKit
 
-class InitialTableViewController: UITableViewController {
+import CoreBluetooth
+
+class InitialTableViewController: UITableViewController, PeripheralSelectionDelegate {
+
+    var selectedPeripherals: [CBPeripheral] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,10 @@ class InitialTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,24 +36,24 @@ class InitialTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return selectedPeripherals.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let peripheral: CBPeripheral = selectedPeripherals[indexPath.row]
+        
+        cell.textLabel?.text = peripheral.name
+        cell.detailTextLabel?.text = peripheral.description
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +90,26 @@ class InitialTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
+        if segue.identifier == "PeripheralsSearchSegue" {
+            if let destinationViewController = segue.destinationViewController as? UINavigationController {
+                if let discoverPeripheralDevicesTableViewController = destinationViewController.viewControllers[0] as? DiscoverPeripheralDevicesTableViewController {
+                        discoverPeripheralDevicesTableViewController.delegate = self
+                }
+            }
+        }
     }
-    */
+
+    // MARK: - PeripheralSelectionDelegate
+
+    func peripheralSelected(peripheral: CBPeripheral) {
+        selectedPeripherals.append(peripheral)
+    }
 
 }

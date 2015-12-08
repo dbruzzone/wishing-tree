@@ -8,9 +8,13 @@
 
 import UIKit
 
-class DiscoverPeripheralDevicesTableViewController: UITableViewController, BluetoothManagerProtocol {
+import CoreBluetooth
 
-    var bluetoothManager: BluetoothManager?
+class DiscoverPeripheralDevicesTableViewController: UITableViewController, BluetoothManagerDelegate {
+
+    var bluetoothManager: BluetoothManager = BluetoothManager.sharedInstance
+
+    var delegate: PeripheralSelectionDelegate?
 
     // MARK: - Outlets
 
@@ -25,9 +29,14 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
-        bluetoothManager = BluetoothManager.sharedInstance
+        bluetoothManager.delegate = self
+    }
 
-        bluetoothManager?.delegate = self
+    override func viewWillAppear(animated: Bool) {
+        // If the Bluetooth hardware is ready, enable the Scan button
+        if bluetoothManager.hardwareReady {
+            scanBarButtonItem.enabled = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,20 +51,16 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (bluetoothManager?.peripherals.count)!
+        return bluetoothManager.discoveredPeripherals.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
-        let peripheral = bluetoothManager!.peripherals[indexPath.row]
+        let peripheral: CBPeripheral = bluetoothManager.discoveredPeripherals[indexPath.row]
 
-        // Safely unwrap peripheral.name before using it
-        if let peripheralName = peripheral.name {
-            cell.textLabel?.text = peripheralName
-        }
-
+        cell.textLabel?.text = peripheral.name
         cell.detailTextLabel?.text = peripheral.description
 
         return cell
@@ -96,6 +101,18 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
     }
     */
 
+    // MARK: - Table view delegate
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        delegate?.peripheralSelected((bluetoothManager.discoveredPeripherals[indexPath.row]))
+
+        if (bluetoothManager.scanning) {
+            bluetoothManager.stopScanning()
+        }
+
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     /*
     // MARK: - Navigation
 
@@ -109,30 +126,32 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
     // MARK: - Actions
 
     @IBAction func cancel(sender: AnyObject) {
+        if (bluetoothManager.scanning) {
+            bluetoothManager.stopScanning()
+        }
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func scan(sender: AnyObject) {
-        if let manager = bluetoothManager {
-            if (manager.scanning) {
-                manager.stopScanning()
+        if (bluetoothManager.scanning) {
+            bluetoothManager.stopScanning()
                 
-                scanBarButtonItem.title = "Scan"
-            } else {
-                manager.scan()
+            scanBarButtonItem.title = "Scan"
+        } else {
+            bluetoothManager.scan()
                 
-                scanBarButtonItem.title = "Stop"
-            }
+            scanBarButtonItem.title = "Stop"
         }
     }
 
-    // MARK: - BluetoothManagerProtocol
+    // MARK: - BluetoothManagerDelegate
 
     func hardwareReady() {
         scanBarButtonItem.enabled = true
     }
 
-    func peripheralAdded() {
+    func peripheralDiscovered() {
         self.tableView.reloadData()
     }
 

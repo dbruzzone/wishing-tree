@@ -10,21 +10,32 @@ import Foundation
 
 import CoreBluetooth
 
-protocol BluetoothManagerProtocol {
+// The protocol that informs delegates when BluetoothManager lifecycle events occur
+protocol BluetoothManagerDelegate {
     func hardwareReady()
-    func peripheralAdded()
+    func peripheralDiscovered()
+}
+
+// The protocol that informs delegates when Bluetooth peripherals are selected
+protocol PeripheralSelectionDelegate {
+    func peripheralSelected(peripheral: CBPeripheral)
 }
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
-    // The class' singleton instance 
+
+    // The class' singleton instance
     static let sharedInstance = BluetoothManager()
 
-    var delegate: BluetoothManagerProtocol?
+    var delegate: BluetoothManagerDelegate?
 
     var centralManager: CBCentralManager?
     
-    var peripherals: [CBPeripheral] = []
+    var discoveredPeripherals: [CBPeripheral] = []
     
+    // The flag that indicates whether the central manager has been initialized - This only
+    // happens once when the BluetoothManager singleton is instantiated - and the Bluetooth
+    // hardware is ready
+    var hardwareReady: Bool = false
     var scanning: Bool = false
 
     override init () {
@@ -50,11 +61,13 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     func centralManagerDidUpdateState(central: CBCentralManager) {
         switch (central.state) {
         case CBCentralManagerState.PoweredOff:
-            print("The device's Bluetooth hardware is powered off")
+            print("The Bluetooth hardware is powered off")
         case CBCentralManagerState.PoweredOn:
-            print("The device's Bluetooth hardware is powered on and ready")
+            print("The Bluetooth hardware is ready")
+
+            hardwareReady = true
             
-            delegate?.hardwareReady()
+            delegate!.hardwareReady()
         case CBCentralManagerState.Resetting:
             print("The Bluetooth hardware is resetting")
         case CBCentralManagerState.Unauthorized:
@@ -67,10 +80,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
 
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        if !peripherals.contains(peripheral) {
-            peripherals.append(peripheral)
+        if !(discoveredPeripherals.contains(peripheral)) {
+            discoveredPeripherals.append(peripheral)
             
-            delegate?.peripheralAdded()
+            delegate!.peripheralDiscovered()
             
             // TODO
             // Try to connect to peripheral
@@ -94,4 +107,5 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
     }
     */
+
 }
