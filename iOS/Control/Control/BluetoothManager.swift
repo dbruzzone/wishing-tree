@@ -22,9 +22,14 @@ protocol PeripheralDelegate {
     func peripheralSelected(peripheral: CBPeripheral)
 }
 
-// The protocol that informs delegates when peripheral service-related events occur
+// The protocol that informs serviceDelegate when peripheral service-related events occur
 protocol PeripheralServiceDelegate {
     func servicesDiscovered(services: [CBService])
+}
+
+// The protocol that informs characteristicDelegate when service characteristic-related events occur
+protocol ServiceCharacteristicDelegate {
+    func characteristicsDiscovered(characteristics: [CBCharacteristic])
 }
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
@@ -35,6 +40,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     // TODO
     var peripheralDelegate: BluetoothManagerDelegate?
     var serviceDelegate: PeripheralServiceDelegate?
+    var characteristicDelegate: ServiceCharacteristicDelegate?
 
     var centralManager: CBCentralManager?
     
@@ -68,6 +74,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
 
     func connectToPeripheral(peripheral: CBPeripheral) {
         centralManager!.connectPeripheral(peripheral, options: nil)
+    }
+
+    func discoverCharacteristics(peripheral: CBPeripheral, service: CBService) {
+        peripheral.discoverCharacteristics(nil, forService: service)
     }
 
     // MARK: - CBCentralManagerDelegate
@@ -111,6 +121,15 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
 
     func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
         serviceDelegate!.servicesDiscovered(peripheral.services!)
+    }
+
+    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+        characteristicDelegate!.characteristicsDiscovered(service.characteristics!)
+
+        // TODO
+        for characteristic: CBCharacteristic in service.characteristics! {
+            print("- Characteristic:\n\t- UUID: \(characteristic.UUID)\n\t- Description: \(characteristic.description)\n\t- Value: \(characteristic.value)")
+        }
     }
 
 }

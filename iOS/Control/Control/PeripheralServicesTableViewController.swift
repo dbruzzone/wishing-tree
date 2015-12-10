@@ -93,15 +93,22 @@ class PeripheralServicesTableViewController: UITableViewController, PeripheralSe
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
+        if segue.identifier == "ServiceSelectSegue" {
+            if let destinationViewController = segue.destinationViewController as? ServiceCharacteristicsTableViewController {
+                let selectedRow = self.tableView.indexPathForSelectedRow!.row
+
+                destinationViewController.selectedPeripheral = selectedPeripheral
+                destinationViewController.selectedService = peripheralServices[selectedRow]
+            }
+        }
     }
-    */
 
     // MARK: - PeripheralServiceDelegate
 

@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ServiceCharacteristicsTableViewController: UITableViewController {
+import CoreBluetooth
+
+class ServiceCharacteristicsTableViewController: UITableViewController, ServiceCharacteristicDelegate {
+
+    var bluetoothManager: BluetoothManager = BluetoothManager.sharedInstance
+
+    var selectedPeripheral: CBPeripheral?
+    var selectedService: CBService?
+
+    var serviceCharacteristics: [CBCharacteristic] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +27,10 @@ class ServiceCharacteristicsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
+        bluetoothManager.characteristicDelegate = self
+        
+        bluetoothManager.discoverCharacteristics(selectedPeripheral!, service: selectedService!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +41,24 @@ class ServiceCharacteristicsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return serviceCharacteristics.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let serviceCharacteristic: CBCharacteristic = serviceCharacteristics[indexPath.row]
+        
+        cell.textLabel?.text = serviceCharacteristic.description
+        // TODO
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +104,13 @@ class ServiceCharacteristicsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    // MARK: - ServiceCharacteristicDelegate
+    
+    func characteristicsDiscovered(characteristics: [CBCharacteristic]) {
+        serviceCharacteristics = characteristics
+        
+        self.tableView.reloadData()
+    }
 
 }
