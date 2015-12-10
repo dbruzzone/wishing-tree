@@ -14,7 +14,7 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
 
     var bluetoothManager: BluetoothManager = BluetoothManager.sharedInstance
 
-    var delegate: PeripheralSelectionDelegate?
+    var delegate: PeripheralDelegate?
 
     // MARK: - Outlets
 
@@ -29,7 +29,9 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
-        bluetoothManager.delegate = self
+        bluetoothManager.peripheralDelegate = self
+
+        bluetoothManager.start()
     }
 
     override func viewWillAppear(animated: Bool) {

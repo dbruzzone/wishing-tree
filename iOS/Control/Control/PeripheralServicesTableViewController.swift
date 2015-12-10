@@ -8,7 +8,15 @@
 
 import UIKit
 
-class PeripheralServicesTableViewController: UITableViewController {
+import CoreBluetooth
+
+class PeripheralServicesTableViewController: UITableViewController, PeripheralServiceDelegate {
+
+    var bluetoothManager: BluetoothManager = BluetoothManager.sharedInstance
+
+    var selectedPeripheral: CBPeripheral?
+
+    var peripheralServices: [CBService] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +26,10 @@ class PeripheralServicesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
+        bluetoothManager.serviceDelegate = self
+
+        bluetoothManager.connectToPeripheral(selectedPeripheral!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +40,23 @@ class PeripheralServicesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return peripheralServices.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let peripheralService: CBService = peripheralServices[indexPath.row]
+        
+        cell.textLabel?.text = peripheralService.UUID.description
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +102,13 @@ class PeripheralServicesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    // MARK: - PeripheralServiceDelegate
+
+    func servicesDiscovered(services: [CBService]) {
+        peripheralServices = services
+
+        self.tableView.reloadData()
+    }
 
 }

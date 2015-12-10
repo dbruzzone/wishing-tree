@@ -10,15 +10,21 @@ import Foundation
 
 import CoreBluetooth
 
-// The protocol that informs delegates when BluetoothManager lifecycle events occur
+// TODO
+// The protocol that informs delegates when BluetoothManager-related events occur
 protocol BluetoothManagerDelegate {
     func hardwareReady()
     func peripheralDiscovered()
 }
 
-// The protocol that informs delegates when Bluetooth peripherals are selected
-protocol PeripheralSelectionDelegate {
+// The protocol that informs delegates when peripheral-related events occur
+protocol PeripheralDelegate {
     func peripheralSelected(peripheral: CBPeripheral)
+}
+
+// The protocol that informs delegates when peripheral service-related events occur
+protocol PeripheralServiceDelegate {
+    func servicesDiscovered(services: [CBService])
 }
 
 class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
@@ -26,7 +32,9 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     // The class' singleton instance
     static let sharedInstance = BluetoothManager()
 
-    var delegate: BluetoothManagerDelegate?
+    // TODO
+    var peripheralDelegate: BluetoothManagerDelegate?
+    var serviceDelegate: PeripheralServiceDelegate?
 
     var centralManager: CBCentralManager?
     
@@ -40,7 +48,9 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
 
     override init () {
         super.init()
+    }
 
+    func start() {
         centralManager = CBCentralManager.init(delegate: self, queue: nil, options: nil)
     }
 
@@ -56,6 +66,10 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         scanning = false
     }
 
+    func connectToPeripheral(peripheral: CBPeripheral) {
+        centralManager!.connectPeripheral(peripheral, options: nil)
+    }
+
     // MARK: - CBCentralManagerDelegate
 
     func centralManagerDidUpdateState(central: CBCentralManager) {
@@ -67,7 +81,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
 
             hardwareReady = true
             
-            delegate!.hardwareReady()
+            peripheralDelegate!.hardwareReady()
         case CBCentralManagerState.Resetting:
             print("The Bluetooth hardware is resetting")
         case CBCentralManagerState.Unauthorized:
@@ -82,30 +96,21 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
         if !(discoveredPeripherals.contains(peripheral)) {
             discoveredPeripherals.append(peripheral)
-            
-            delegate!.peripheralDiscovered()
-            
-            // TODO
-            // Try to connect to peripheral
-            //centralManager?.connectPeripheral(peripheral, options: nil)
+
+            peripheralDelegate!.peripheralDiscovered()
         }
     }
-    
-    // TODO
-    /*
+
     func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        print("Connected to the \(peripheral.name) peripheral")
-    
         peripheral.delegate = self
-    
+
         peripheral.discoverServices(nil)
     }
-    
+
+    // MARK: - CBPeripheralDelegate
+
     func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
-        for service: CBService in peripheral.services! {
-            print("Discovered a service:\n- UUID: \(service.UUID)\n- Service: \(service)")
-        }
+        serviceDelegate!.servicesDiscovered(peripheral.services!)
     }
-    */
 
 }

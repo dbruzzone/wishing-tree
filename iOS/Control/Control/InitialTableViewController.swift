@@ -10,7 +10,7 @@ import UIKit
 
 import CoreBluetooth
 
-class InitialTableViewController: UITableViewController, PeripheralSelectionDelegate {
+class InitialTableViewController: UITableViewController, PeripheralDelegate {
 
     var selectedPeripherals: [CBPeripheral] = []
 
@@ -102,6 +102,12 @@ class InitialTableViewController: UITableViewController, PeripheralSelectionDele
                 if let discoverPeripheralDevicesTableViewController = destinationViewController.viewControllers[0] as? DiscoverPeripheralDevicesTableViewController {
                         discoverPeripheralDevicesTableViewController.delegate = self
                 }
+            }
+        } else if segue.identifier == "PeripheralSelectSegue" {
+            if let destinationViewController = segue.destinationViewController as? PeripheralServicesTableViewController {
+                let selectedRow = self.tableView.indexPathForSelectedRow!.row
+    
+                destinationViewController.selectedPeripheral = selectedPeripherals[selectedRow]
             }
         }
     }
