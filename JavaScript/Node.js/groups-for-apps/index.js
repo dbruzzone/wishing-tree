@@ -26,7 +26,7 @@ mongoose.connect(nconf.get('MONGOLAB_URI')); // Connect to the database
 
 // Routes
 app.get('/', function(req, res) {
-    res.send('Hello. The API is at http://localhost:' + port + '/api');
+    res.json({ "error": false, "message": "Hello!" });
 });
 
 // API routes
