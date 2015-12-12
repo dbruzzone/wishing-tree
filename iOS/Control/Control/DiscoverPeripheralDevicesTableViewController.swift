@@ -62,8 +62,12 @@ class DiscoverPeripheralDevicesTableViewController: UITableViewController, Bluet
         // Configure the cell...
         let peripheral: CBPeripheral = bluetoothManager.discoveredPeripherals[indexPath.row]
 
-        cell.textLabel?.text = peripheral.name
-        cell.detailTextLabel?.text = peripheral.description
+        if let name = peripheral.name {
+            cell.textLabel?.text = name
+        } else {
+            cell.textLabel?.text = "No name"
+        }
+        cell.detailTextLabel?.text = peripheral.identifier.UUIDString
 
         return cell
     }
