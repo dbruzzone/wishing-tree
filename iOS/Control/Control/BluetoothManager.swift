@@ -107,6 +107,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         if !(discoveredPeripherals.contains(peripheral)) {
             discoveredPeripherals.append(peripheral)
 
+            print("Peripheral: \(peripheral)")
+
             peripheralDelegate!.peripheralDiscovered()
         }
     }
@@ -120,16 +122,19 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     // MARK: - CBPeripheralDelegate
 
     func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+        for service: CBService in peripheral.services! {
+            print("Service: \(service)")
+        }
+
         serviceDelegate!.servicesDiscovered(peripheral.services!)
     }
 
     func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
-        characteristicDelegate!.characteristicsDiscovered(service.characteristics!)
-
-        // TODO
         for characteristic: CBCharacteristic in service.characteristics! {
-            print("- Characteristic:\n\t- UUID: \(characteristic.UUID)\n\t- Description: \(characteristic.description)\n\t- Value: \(characteristic.value)")
+            print("Characteristic: \(characteristic)")
         }
+
+        characteristicDelegate!.characteristicsDiscovered(service.characteristics!)
     }
 
 }
