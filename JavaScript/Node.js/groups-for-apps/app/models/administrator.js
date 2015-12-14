@@ -10,11 +10,11 @@ var AdministratorSchema = new Schema({
     password: String
 });
 
-// Generates a hash
-UserSchema.methods.generateHash = password.generateHash; 
+// Generates a password hash
+AdministratorSchema.methods.generateHash = password.generateHash; 
 
 // Checks if password is valid
-UserSchema.methods.validPassword = password.validPassword;function(password) {
+AdministratorSchema.methods.validPassword = password.validPassword;
 
 // Expose the model to the app
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Administrator', AdministratorSchema);
