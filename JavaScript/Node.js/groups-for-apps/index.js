@@ -8,7 +8,11 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var jwt = require('jsonwebtoken'); // This is used to create, sign, and verify JSON Web tokens
 
-var App = require('./app/models/app'); // Load the App model
+// Load the app's models
+var App = require('./app/models/app');
+var Administrator = require('./app/models/administrator');
+
+var password = require("./app/utils/password");
 
 var nconf = require('nconf');
 
@@ -22,11 +26,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set('tokenSecret', nconf.get('TOKEN_SECRET')); // Set the app's token secret
 
 // Database configuration
-mongoose.connect(nconf.get('MONGOLAB_URI')); // Connect to the database
+mongoose.connect(nconf.get('MONGO_URI')); // Connect to the database
 
 // Routes
 app.get('/', function(req, res) {
     res.json({ "error": false, "message": "Hello!" });
+});
+
+app.get('/create-admin', function(req, res) {
+  // Create the server's administrator 
+  var admin = new Administrator({ 
+    email: nconf.get('ADMINISTRATOR_EMAIL'), 
+    password: password.generateHash(nconf.get('ADMINISTRATOR_PASSWORD'))
+  });
+
+  admin.save(function(err) {
+    if (err) throw err;
+
+    console.log("The server's administrator was created successfully");
+
+    res.json({ success: true, 'admin-email': admin.email });
+  });
 });
 
 // API routes
