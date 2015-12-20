@@ -15,6 +15,7 @@
 		210224FE1C0B4F3800EC710E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210224FC1C0B4F3800EC710E /* LaunchScreen.storyboard */; };
 		210225091C0B4F3A00EC710E /* TypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210225081C0B4F3A00EC710E /* TypeTests.swift */; };
 		210225141C0B4F3A00EC710E /* TypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210225131C0B4F3A00EC710E /* TypeUITests.swift */; };
+		219E49181C2740B90001836B /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219E49171C2740B90001836B /* TextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2102250F1C0B4F3A00EC710E /* TypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		210225131C0B4F3A00EC710E /* TypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeUITests.swift; sourceTree = "<group>"; };
 		210225151C0B4F3A00EC710E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		219E49171C2740B90001836B /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		210224EF1C0B4F3800EC710E /* Type */ = {
 			isa = PBXGroup;
 			children = (
+				219E49141C273FBC0001836B /* Views */,
 				210224F01C0B4F3800EC710E /* AppDelegate.swift */,
 				210224F21C0B4F3800EC710E /* ViewController.swift */,
 				210224F41C0B4F3800EC710E /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				210225151C0B4F3A00EC710E /* Info.plist */,
 			);
 			path = TypeUITests;
+			sourceTree = "<group>";
+		};
+		219E49141C273FBC0001836B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				219E49171C2740B90001836B /* TextView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				210224F31C0B4F3800EC710E /* ViewController.swift in Sources */,
+				219E49181C2740B90001836B /* TextView.swift in Sources */,
 				210224F11C0B4F3800EC710E /* AppDelegate.swift in Sources */,
 				210224F91C0B4F3800EC710E /* Type.xcdatamodeld in Sources */,
 			);
@@ -488,6 +500,7 @@
 				2102251A1C0B4F3A00EC710E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2102251B1C0B4F3A00EC710E /* Build configuration list for PBXNativeTarget "TypeTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +509,7 @@
 				2102251D1C0B4F3A00EC710E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2102251E1C0B4F3A00EC710E /* Build configuration list for PBXNativeTarget "TypeUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +518,7 @@
 				210225201C0B4F3A00EC710E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
