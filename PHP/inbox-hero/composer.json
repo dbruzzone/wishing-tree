@@ -1,5 +1,12 @@
 {
     "require": {
+        "slim/slim": "^3.0",
+        "slim/twig-view": "2.*",
         "google/apiclient": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "InboxHero\\": "src/"
+        }
     }
 }
