@@ -3,4 +3,8 @@ source 'https://rubygems.org'
 gem 'nokogiri'
 
 gem 'sinatra'
-gem 'omniauth-spotify'
+
+group :test, :development do
+  gem 'rack-test'
+  gem 'rspec'
+end
