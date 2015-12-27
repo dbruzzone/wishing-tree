@@ -2,3 +2,5 @@
 
 # Gems
 .gems/
+
+!lib
