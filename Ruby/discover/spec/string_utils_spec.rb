@@ -8,8 +8,10 @@ describe StringUtils do
       end
 
       it "returns a random string that only contains the allowed alphanumeric characters" do
+        length = 10
+        
         # The allowed alphanumeric characters are 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-        expect(StringUtils.generate_random_string(10)).to match(/^[A-Za-z0-9]+$/)
+        expect(StringUtils.generate_random_string(length)).to match(/^[A-Za-z0-9]{#{length}}+$/)
       end
     end
   end
