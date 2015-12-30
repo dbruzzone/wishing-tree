@@ -8,4 +8,14 @@ describe "My Spotify application" do
 
     expect(last_response.body).to match /Hello/
   end
+
+  it "should redirect users when they log in" do
+    get '/login'
+
+    expect(last_response).to be_redirect
+
+    follow_redirect!
+
+    expect(last_request.url).to eq 'https://accounts.spotify.com/authorize'
+  end
 end
