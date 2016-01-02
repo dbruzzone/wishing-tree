@@ -34,3 +34,7 @@ get '/login' do
   # Request authorization
   redirect "https://accounts.spotify.com/authorize?#{URLUtils::query_string(query_parameters)}"
 end
+
+get '/auth/spotify/callback' do
+  'Succeeded'
+end

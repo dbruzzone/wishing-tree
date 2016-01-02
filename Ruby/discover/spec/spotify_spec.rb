@@ -24,4 +24,13 @@ describe "My Spotify application" do
 
     expect(rack_mock_session.cookie_jar['spotify_auth_state']).to match /[a-zA-Z0-9]{16}/
   end
+
+  it "should find the 'spotify_auth_state' cookie when users are redirected to the '/auth/spotify/callback' route after they visit the '/login' route" do
+    get '/login'
+    get '/auth/spotify/callback?code=xxxx&state=yyyyyyyyyyyyyyyy'
+
+    expect(last_response).to be_ok
+
+    expect(rack_mock_session.cookie_jar['spotify_auth_state']).to match /[a-zA-Z0-9]{16}/
+  end
 end
