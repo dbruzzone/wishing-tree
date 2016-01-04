@@ -36,5 +36,16 @@ get '/login' do
 end
 
 get '/auth/spotify/callback' do
+  code = params['code'] || nil
+  state = params['state'] || nil
+
+  stored_state = request.cookies[ 'spotify_auth_state' ] || nil
+
+  if state.nil? or state != stored_state
+    redirect '/#error=state_mismatch'
+  else
+    # TODO
+  end
+
   'Succeeded'
 end

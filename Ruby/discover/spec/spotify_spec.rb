@@ -29,8 +29,20 @@ describe "My Spotify application" do
     get '/login'
     get '/auth/spotify/callback?code=xxxx&state=yyyyyyyyyyyyyyyy'
 
-    expect(last_response).to be_ok
+    expect(last_response).to be_redirect
 
     expect(rack_mock_session.cookie_jar['spotify_auth_state']).to match /[a-zA-Z0-9]{16}/
+  end
+
+  it "should redirect users to '/#error=state_mismatch' when the 'state' parameter isn't available in the callback URL's query string or isn't the same as the 'spotify_auth_state' cookie's value" do
+    rack_mock_session.cookie_jar['spotify_auth_state'] = 'xxxxxxxxxxxxxxxx'
+
+    get '/auth/spotify/callback?code=xxxx&state=yyyyyyyyyyyyyyyy'
+
+    expect(last_response).to be_redirect
+
+    get '/auth/spotify/callback?code=xxxx'
+
+    expect(last_response).to be_redirect
   end
 end
