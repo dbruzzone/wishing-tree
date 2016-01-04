@@ -4,7 +4,10 @@ gem 'nokogiri'
 
 gem 'sinatra'
 
+gem 'dotenv'
+
 group :test, :development do
   gem 'rack-test'
   gem 'rspec'
+  gem 'webmock'
 end
