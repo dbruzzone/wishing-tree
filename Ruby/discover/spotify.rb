@@ -1,16 +1,18 @@
 require 'sinatra'
 
+require 'dotenv'
+
+Dotenv.load
+
 require_relative 'lib/string_utils'
 require_relative 'lib/url_utils'
 
-# There are other/better ways to configure the server's settings (such as dotenv -
-# https://github.com/bkeepers/dotenv) but for now, since I'm  starting by porting the Spotify Web
-# API example at https://github.com/spotify/web-api-auth-examples/tree/master/authorization_code,
-# I'm keeping things simple
-client_id = ENV['DISCOVER_SPOTIFY_CLIENT_ID']
-redirect_uri = 'http://localhost:4567/auth/spotify/callback'
+client_id = ENV[ 'SPOTIFY_CLIENT_ID' ]
+client_secret = ENV[ 'SPOTIFY_CLIENT_SECRET' ]
 
-state_key = 'spotify_auth_state'
+state_key = ENV[ 'STATE_KEY' ]
+scope = ENV[ 'SCOPE' ]
+redirect_uri = ENV[ 'REDIRECT_URL' ]
 
 get '/' do
   'Hello'
@@ -21,8 +23,6 @@ get '/login' do
 
   response.set_cookie state_key, state
 
-  scope = 'user-read-private user-read-email'
-
   query_parameters = {
     response_type: 'code',
     client_id: client_id,
@@ -32,14 +32,14 @@ get '/login' do
   }
 
   # Request authorization
-  redirect "https://accounts.spotify.com/authorize?#{URLUtils::query_string(query_parameters)}"
+  redirect "#{ENV[ 'SPOTIFY_AUTHORIZATION_URL' ]}#{URLUtils::query_string(query_parameters)}"
 end
 
 get '/auth/spotify/callback' do
   code = params['code'] || nil
   state = params['state'] || nil
 
-  stored_state = request.cookies[ 'spotify_auth_state' ] || nil
+  stored_state = request.cookies[ state_key ] || nil
 
   if state.nil? or state != stored_state
     redirect '/#error=state_mismatch'
