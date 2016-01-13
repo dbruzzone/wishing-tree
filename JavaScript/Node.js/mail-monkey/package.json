@@ -13,5 +13,9 @@
     "express": "^4.13.3",
     "morgan": "~1.6.1",
     "nconf": "~0.8.2"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0"
   }
 }

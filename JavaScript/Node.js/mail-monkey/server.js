@@ -28,3 +28,5 @@ var server = app.listen(port, function () {
 
   console.log('The mail-monkey app is listening at http://%s:%s', serverAddress.host, serverAddress.port);
 });
+
+module.exports = app;
