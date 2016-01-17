@@ -7,11 +7,11 @@ var chai = require('chai'),
 describe('The e-mail strategies', function() {
   describe('E-mail strategy', function() {
     it('should send e-mail', function() {
-      var emailStrategy = new EmailStrategy(mockEmailStrategy);
+      var emailStrategy = new EmailStrategy('mock-email-strategy');
 
       expect(emailStrategy.sendEmail()).to.equal('Mock e-mail strategy');
 
-      var anotherEmailStrategy = new EmailStrategy(mailChimpEmailStrategy);
+      var anotherEmailStrategy = new EmailStrategy('mailchimp-email-strategy');
 
       expect(anotherEmailStrategy.sendEmail()).to.equal('MailChimp e-mail strategy');
     });

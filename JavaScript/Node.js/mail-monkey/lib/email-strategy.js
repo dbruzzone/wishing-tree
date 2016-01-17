@@ -1,5 +1,5 @@
-var EmailStrategy = function (strategy) {
-  this.strategy = strategy;
+var EmailStrategy = function (strategyName) {
+  this.strategy = require(process.cwd() + '/lib/' + strategyName);
 }
 
 EmailStrategy.prototype.sendEmail = function () {
