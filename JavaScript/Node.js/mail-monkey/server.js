@@ -1,5 +1,6 @@
 var fs = require('fs'),
-    nconf = require('nconf');
+    nconf = require('nconf'),
+    jade = require('jade');
 
 nconf.env().file({ file: 'config.json' });
 
@@ -15,10 +16,18 @@ app.use(morgan('dev')); // Log every request to the console
 
 app.use(bodyParser.urlencoded({ extended: false })); // Handle 'application/x-www-form-urlencoded' forms
 
+app.set('view engine', 'jade');
+
+// Jade
+//
+// Compile the specified Jade file
+var fn = jade.compileFile(nconf.get('templates:html'));
+
 // Routes
 app.get('/', function (req, res) {
-  // TODO
-  res.send('Hello');
+  var html = fn({ title: 'Title', message: 'Hello' });
+
+  res.send(html);
 });
 
 var port = nconf.get('port') || 3000;

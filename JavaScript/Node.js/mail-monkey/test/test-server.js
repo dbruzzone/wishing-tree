@@ -13,7 +13,7 @@ describe('The Mail Monkey server', function() {
       .end(function(err, res) {
         res.should.have.status(200);
 
-        res.text.should.equal('Hello');
+        res.text.should.equal('<html><head><title>Title</title></head><body><h1>Hello</h1></body></html>');
 
         done();
     });
