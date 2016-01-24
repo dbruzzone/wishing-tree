@@ -1,7 +1,7 @@
 var chai = require('chai'),
     expect = chai.expect,
     mockEmailStrategy = require('../lib/mock-email-strategy'),
-    nodemailerEmailStrategy = require('../lib/nodemailer-email-strategy'),
+    mailgunEmailStrategy = require('../lib/mailgun-email-strategy'),
     EmailStrategy = require('../lib/email-strategy');
 
 describe('E-mail strategies', function() {
@@ -11,9 +11,9 @@ describe('E-mail strategies', function() {
 
       expect(emailStrategy.sendEmail()).to.equal('Mock e-mail strategy');
 
-      var anotherEmailStrategy = new EmailStrategy('nodemailer-email-strategy');
+      var anotherEmailStrategy = new EmailStrategy('mailgun-email-strategy');
 
-      expect(anotherEmailStrategy.sendEmail()).to.equal('Nodemailer e-mail strategy');
+      expect(anotherEmailStrategy.sendEmail()).to.equal('Mailgun e-mail strategy');
     });
   });
 
@@ -23,9 +23,9 @@ describe('E-mail strategies', function() {
     });
   });
 
-  describe('Nodemailer e-mail strategy', function() {
+  describe('Mailgun e-mail strategy', function() {
     it('should send e-mail', function() {
-      expect(nodemailerEmailStrategy.sendEmail()).to.equal('Nodemailer e-mail strategy');
+      expect(mailgunEmailStrategy.sendEmail()).to.equal('Mailgun e-mail strategy');
     });
   });
 });

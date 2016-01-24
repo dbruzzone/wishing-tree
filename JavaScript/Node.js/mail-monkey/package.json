@@ -12,6 +12,7 @@
     "body-parser": "~1.14.2",
     "express": "^4.13.3",
     "jade": "^1.11.0",
+    "mailgun-js": "^0.7.7",
     "morgan": "~1.6.1",
     "nconf": "~0.8.2",
     "nodemailer": "^2.0.0"
