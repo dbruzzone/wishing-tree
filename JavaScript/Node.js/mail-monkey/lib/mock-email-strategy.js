@@ -1,3 +1,3 @@
-exports.sendEmail = function() {
-    return 'Mock e-mail strategy';
+exports.sendEmail = function(recipient, subject, message) {
+  return { status: 'success', recipient: recipient, subject: subject }; 
 };

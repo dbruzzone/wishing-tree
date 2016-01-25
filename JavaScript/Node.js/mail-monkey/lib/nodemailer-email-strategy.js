@@ -1,3 +1,3 @@
-exports.sendEmail = function () {
-  return 'Nodemailer e-mail strategy';
+exports.sendEmail = function (recipient, subject, message) {
+  return { status: 'success', recipient: recipient, subject: subject };
 };
