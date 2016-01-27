@@ -88,3 +88,5 @@ var server = app.listen(port, function () {
 
   console.log('The type app is listening at http://%s:%s', serverAddress.host, serverAddress.port);
 });
+
+module.exports = app;
