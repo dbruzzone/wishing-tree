@@ -1,0 +1,23 @@
+body {
+    font: xx-large sans-serif;
+}
+
+label {
+    display: block;
+}
+
+button {
+    margin: 20px 0 20px 0;
+}
+
+input[type="text"], button { 
+    width: 100%;
+
+    box-sizing: border-box;
+
+    font: xx-large sans-serif;
+}
+
+#result {
+    text-align: center;
+}

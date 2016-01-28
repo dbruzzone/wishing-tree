@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>A simple running calculator</title>
+
+        <meta name="description" content="A simple running calculator that's designed to be used while running">
+        <meta name="author" content="Davide Bruzzone">
+
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <form>
+            <label for="minutes">Minutes</label>
+            <input type="text" id="minutes" pattern="[0-9]*">
+            <label for="seconds">Seconds</label>
+            <input type="text" id="seconds" pattern="[0-9]*">
+
+            <button type="button" id="calculate-speed">Calculate speed</button>
+            <button type="reset">Reset</button>
+
+            <div id="result"></div>
+        </form>
+
+        <script src="js/running-calculator.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#calculate-speed').click(function() {
+                    var minutes = parseInt($('#minutes').val()),
+                        seconds = parseInt($('#seconds').val());
+
+                    console.log(RunningCalculator.getSpeed(minutes, seconds).toFixed(2));
+
+                    $('#result').html(RunningCalculator.getSpeed(minutes, seconds).toFixed(3) + ' miles / hour');
+                });
+            });
+        </script>
+            
+        </script>
+    </body>
+</html>
