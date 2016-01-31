@@ -1,2 +1,4 @@
 # The directory in which every Ruby sub-project's gems are installed (in each sub-project's directory)
 .gems
+
+!lib

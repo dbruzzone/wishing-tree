@@ -1,8 +1,3 @@
 # Sub-project ignores
 
-# Gems
-.gems/
-
 ssl/
-
-!lib
