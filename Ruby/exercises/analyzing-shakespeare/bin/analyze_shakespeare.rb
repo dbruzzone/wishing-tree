@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative 'lib/counter'
+require_relative '../lib/counter'
 
 play_name = ARGV[0]
 
