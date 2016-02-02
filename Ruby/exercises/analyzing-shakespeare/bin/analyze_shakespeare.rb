@@ -20,5 +20,6 @@ document = counter.get_document(url)
 lines_spoken_by_characters = counter.count_lines_spoken_by_characters(document)
 
 lines_spoken_by_characters.each do |character_name, lines|
-  puts "#{lines}\t#{character_name}"
+  # Downcase everything in character then capitalize the first letter of each word
+  puts "#{lines}\t#{character_name.downcase.split(' ').map(&:capitalize).join(' ')}"
 end
