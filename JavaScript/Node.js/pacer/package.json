@@ -1,0 +1,23 @@
+{
+  "name": "pacer",
+  "version": "0.1.0",
+  "description": "A server that analyzes training activities and races",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: No test specified\" && exit 1"
+  },
+  "author": "Davide Bruzzone <davide.bruzzone@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "~1.14.2",
+    "express": "~4.13.4",
+    "morgan": "~1.6.1",
+    "nconf": "~0.8.2",
+    "nunjucks": "~2.3.0",
+    "semantic-ui": "~2.1.8"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "chai-http": "~2.0.1"
+  }
+}
