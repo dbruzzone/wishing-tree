@@ -1,0 +1,23 @@
+{
+  "name": "generator-node-server",
+  "version": "0.0.1",
+  "description": "A generator that creates modular Node.js servers using Express and various other packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Node.js",
+    "Express"
+  ],
+  "author": "Davide Bruzzone <davide.bruzzone@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^0.22.5"
+  },
+  "files": [
+    "app"
+  ]
+}
