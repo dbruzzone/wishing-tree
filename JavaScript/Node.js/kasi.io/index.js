@@ -1,6 +1,7 @@
 var fs = require('fs'),
     nconf = require('nconf'),
-    nunjucks = require('nunjucks');
+    nunjucks = require('nunjucks'),
+    passport = require(__dirname + '/modules/passport.js');
 
 nconf.env().file({ file: 'config.json' });
 
@@ -21,6 +22,9 @@ nunjucks.configure(nconf.get('views'), {
 });
 
 app.use(express.static('semantic'));
+
+// Authentication
+passport.init(app, nconf.get('authentication:secret'));
 
 // Routes
 app.get('/', function (req, res) {
