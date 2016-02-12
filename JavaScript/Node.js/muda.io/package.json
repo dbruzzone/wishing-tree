@@ -1,0 +1,16 @@
+{
+  "name": "muda.io",
+  "version": "0.0.1",
+  "description": "A time and activity tracking tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "Node.js",
+    "Express"
+  ],
+  "author": "Davide Bruzzone <davide.bruzzone@gmail.com>",
+  "license": "GPL-3.0"
+}
