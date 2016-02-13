@@ -12,5 +12,12 @@
     "Express"
   ],
   "author": "Davide Bruzzone <davide.bruzzone@gmail.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "hapi": "^11.0.0"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "chai-http": "~2.0.1"
+  }
 }
