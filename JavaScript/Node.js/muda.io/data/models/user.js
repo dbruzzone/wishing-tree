@@ -1,12 +1,14 @@
 var mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
     bcrypt   = require('bcrypt-nodejs');
 
 // The model's schema
-var userSchema = mongoose.Schema({
+var userSchema = Schema({
   local: {
     email: String,
     password: String,
-  }
+  },
+  activities: [ { type: Schema.ObjectId, ref: 'Activity' }]
 });
 
 // Methods
