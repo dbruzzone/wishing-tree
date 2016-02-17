@@ -1,0 +1,6 @@
+{
+    "port": 3000,
+    "data-store": {
+        "url": "mongodb://localhost:27017/muda-test"
+    }
+}

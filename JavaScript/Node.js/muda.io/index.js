@@ -5,7 +5,9 @@ var fs = require('fs'),
     store = require(__dirname + '/data/store.js'),
     apiRoutes = require(__dirname + '/routes/api.js');
 
-nconf.env().file({ file: 'config.json' });
+var env = process.env.NODE_ENV || 'production';
+
+nconf.env().file({ file: 'config-' + env + '.json' });
 
 var express = require('express');
 
